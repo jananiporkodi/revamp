@@ -7,7 +7,7 @@
 <meta property="og:title" content="Raasi Palace"><meta property="og:image" content="img/art.jpg">
 <link rel="icon" href="img/logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;600&family=Noto+Serif+Tamil:wght@500&display=swap">
-<style>:root{--deep:#3a0d0a;--deep2:#561410;--paper:#fdf3d7;--ink:#2a1208;--accent:#f2b705;--on-accent:#2a1208;--accent-dark:#8c1c13;--muted:#5b4334;--line:#e7d3a6;--display:'Rozha One',Georgia,serif;--body:'Mukta',system-ui,sans-serif;--native:'Noto Serif Tamil'}
+<style>:root{--deep:#2e1a0a;--deep2:#432811;--paper:#f8efdc;--ink:#2e1a0a;--accent:#d4a24c;--on-accent:#2e1a0a;--accent-dark:#8a5a1e;--muted:#5e4a35;--line:#e6d4b0;--display:'Rozha One',Georgia,serif;--body:'Mukta',system-ui,sans-serif;--native:'Noto Serif Tamil'}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:var(--deep);color:var(--paper);font:400 18px/1.6 var(--body);overflow-x:hidden}
 img{max-width:100%;display:block}
@@ -18,7 +18,8 @@ a{color:inherit}
 .nav>*{pointer-events:auto}
 .brand{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.92);color:var(--ink);padding:5px 14px 5px 5px;border-radius:99px;text-decoration:none;font-family:var(--display);font-size:17px}
 .brand span{white-space:nowrap}.nav .btn{white-space:nowrap}
-@media(max-width:520px){.brand span{display:none}.brand{padding:5px}}
+@media(max-width:520px){.brand:not(.nologo) span{display:none}.brand:not(.nologo){padding:5px}.brand.nologo{padding:8px 14px;font-size:15px}}
+.brand.nologo{padding:8px 16px}
 .brand img{width:36px;height:36px;object-fit:contain;border-radius:50%;background:#fff}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on-accent);font:600 15px var(--body);padding:11px 20px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
 .btn.ghost{background:transparent;color:var(--paper);border:1.5px solid rgba(255,255,255,.55);box-shadow:none}
@@ -80,7 +81,7 @@ section.band{padding:clamp(70px,12vh,140px) max(22px,6vw)}
 .band h2{font-size:clamp(2.2rem,5.4vw,4rem);margin:10px 0 18px}
 .lead{font-size:1.15rem;max-width:58ch}
 .light{background:var(--paper);color:var(--ink)}.light .kicker{color:var(--accent-dark)}.light .lead{color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:2px solid var(--accent-dark)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:48px;border-top:2px solid var(--accent-dark)}
 .stat{padding:26px 20px 26px 0;border-right:1px solid var(--line)}.stat:last-child{border-right:0}
 .stat b{display:block;font:400 clamp(2.8rem,6.4vw,5rem)/1 var(--display);color:var(--accent-dark);font-variant-numeric:tabular-nums}
 .stat span{display:block;margin-top:8px;font-size:1rem;color:var(--muted)}

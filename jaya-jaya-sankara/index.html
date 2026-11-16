@@ -7,7 +7,7 @@
 <meta property="og:title" content="Jaya Jaya Sankara"><meta property="og:image" content="img/night.jpg">
 <link rel="icon" href="img/logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Hind:wght@400;600&display=swap">
-<style>:root{--deep:#0b0d24;--deep2:#141a3e;--paper:#f7f3ea;--ink:#14162e;--accent:#f4b63f;--on-accent:#14162e;--accent-dark:#2a3fb8;--muted:#4a4e66;--line:#d9d6e6;--display:'Yeseva One',Georgia,serif;--body:'Hind',system-ui,sans-serif;--native:serif}
+<style>:root{--deep:#2b1d12;--deep2:#3a2817;--paper:#fbf6ec;--ink:#2b1d12;--accent:#e8b44f;--on-accent:#2b1d12;--accent-dark:#a87a2a;--muted:#5c4c3c;--line:#eadcbf;--display:'Yeseva One',Georgia,serif;--body:'Hind',system-ui,sans-serif;--native:serif}
 *{box-sizing:border-box}html,body{margin:0}
 body{background:var(--deep);color:var(--paper);font:400 18px/1.6 var(--body);overflow-x:hidden}
 img{max-width:100%;display:block}
@@ -18,7 +18,8 @@ a{color:inherit}
 .nav>*{pointer-events:auto}
 .brand{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.92);color:var(--ink);padding:5px 14px 5px 5px;border-radius:99px;text-decoration:none;font-family:var(--display);font-size:17px}
 .brand span{white-space:nowrap}.nav .btn{white-space:nowrap}
-@media(max-width:520px){.brand span{display:none}.brand{padding:5px}}
+@media(max-width:520px){.brand:not(.nologo) span{display:none}.brand:not(.nologo){padding:5px}.brand.nologo{padding:8px 14px;font-size:15px}}
+.brand.nologo{padding:8px 16px}
 .brand img{width:36px;height:36px;object-fit:contain;border-radius:50%;background:#fff}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--on-accent);font:600 15px var(--body);padding:11px 20px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
 .btn.ghost{background:transparent;color:var(--paper);border:1.5px solid rgba(255,255,255,.55);box-shadow:none}
@@ -42,6 +43,7 @@ a{color:inherit}
 /* painting */
 .art-shade{background:linear-gradient(90deg,rgba(20,4,2,.85) 0%,rgba(20,4,2,.5) 45%,rgba(20,4,2,0) 75%),linear-gradient(180deg,rgba(10,4,4,0) 50%,rgba(10,4,4,.8) 100%)}
 @media(max-width:700px){.art-shade{background:linear-gradient(180deg,rgba(20,4,2,.2) 0%,rgba(20,4,2,.15) 35%,rgba(20,4,2,.9) 75%)}}
+.hero-walk .shade,.hero-lights .shade{background:linear-gradient(90deg,rgba(10,4,4,.72) 0%,rgba(10,4,4,.35) 40%,rgba(10,4,4,0) 65%),linear-gradient(180deg,rgba(10,4,4,.45) 0%,rgba(10,4,4,0) 26%,rgba(10,4,4,0) 42%,rgba(10,4,4,.6) 66%,rgba(10,4,4,.92) 100%)}
 .artveil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,.35),rgba(0,0,0,.85));opacity:0;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .cards{position:absolute;inset:0;display:grid;place-items:center;padding-bottom:10vh}
 .pc{grid-area:1/1;margin:0;width:min(84vw,58vh);aspect-ratio:1;padding:10px;background:linear-gradient(135deg,#f6d77a,#b8862b 45%,#f3cf6a 70%,#9a6614);border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0}
@@ -80,7 +82,7 @@ section.band{padding:clamp(70px,12vh,140px) max(22px,6vw)}
 .band h2{font-size:clamp(2.2rem,5.4vw,4rem);margin:10px 0 18px}
 .lead{font-size:1.15rem;max-width:58ch}
 .light{background:var(--paper);color:var(--ink)}.light .kicker{color:var(--accent-dark)}.light .lead{color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:2px solid var(--accent-dark)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:48px;border-top:2px solid var(--accent-dark)}
 .stat{padding:26px 20px 26px 0;border-right:1px solid var(--line)}.stat:last-child{border-right:0}
 .stat b{display:block;font:400 clamp(2.8rem,6.4vw,5rem)/1 var(--display);color:var(--accent-dark);font-variant-numeric:tabular-nums}
 .stat span{display:block;margin-top:8px;font-size:1rem;color:var(--muted)}
