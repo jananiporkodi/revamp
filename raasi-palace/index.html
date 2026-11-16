@@ -205,13 +205,13 @@ footer{background:var(--tint2);color:var(--muted)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 (function(){
-const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="917904905681", NAME="Raasi Palace";
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="917904905681", NAME="Raasi Palace", WAQ="is the hall available on {date}?";
 gsap.registerPlugin(ScrollTrigger);
 
 document.getElementById("dateform").addEventListener("submit",e=>{
   e.preventDefault(); const d=document.getElementById("mdate").value; if(!d) return;
   const nice=new Date(d+"T00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"});
-  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(`Hello ${NAME}, is the hall available on ${nice}?`),"_blank");
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(`Hello ${NAME}, ${WAQ.replace("{date}",nice)}`),"_blank");
 });
 const sp=document.getElementById("sparks"); let sparkY=()=>{};
 if(sp&&!reduce){const x=sp.getContext("2d");let w,h,pts=[],edge=-1;
