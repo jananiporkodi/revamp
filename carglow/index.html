@@ -166,8 +166,25 @@ body{background:var(--paper);color:var(--ink)}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{margin:10px 0 0;color:var(--muted);max-width:70ch}
 footer{background:var(--tint2);color:var(--muted)}
+
+/* ---- motion layer v2 ---- */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent-dark);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}.sw>i{display:inline-block;font-style:inherit}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out infinite 1.2s;z-index:-1;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--accent-dark) 22%,transparent),transparent)}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.marquee{overflow:hidden;background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,3vh,30px) 0}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite;will-change:transform}
+.mq span{font:400 clamp(1.8rem,4.6vw,3.4rem)/1.1 var(--display);color:var(--accent-dark);white-space:nowrap;padding-right:.9em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--accent-dark)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.card:hover{transform:translateY(-8px)}.card:hover img{transform:scale(1.04)!important}}
+@media (prefers-reduced-motion:reduce){.mq,.btn::after{animation:none}}
 </style>
 </head><body>
+<div id="prog"></div>
 <div class="concept">Concept redesign for Carglow · not the official website</div>
 <nav class="nav"><a class="brand" href="#walk"><img src="img/logo.png" alt=""><span>Carglow</span></a><a class="btn" href="tel:+919498068989">Call to book</a></nav>
 
@@ -188,6 +205,7 @@ footer{background:var(--tint2);color:var(--muted)}
   <div class="stats"><div class="stat"><b data-count="5">5</b><span>years&#x27; durability, Nasiol 9H ceramic</span></div><div class="stat"><b data-count="7">7</b><span>years&#x27; durability, Solar Gard PPF</span></div><div class="stat"><b data-count="4">4</b><span>days for a full ceramic coating job</span></div><div class="stat"><b data-count="2018" data-plain>2018</b><span>International Detailing Association member</span></div></div><ul class="extras"><li>Premium car wash</li><li>Wash &amp; wax</li><li>Engine bay cleaning</li><li>Headlight restoration</li><li>Interior cleaning</li><li>Level 1 polishing</li><li>Level 2 paint correction</li><li>9H nano ceramic coating</li><li>Graphene coating</li><li>Windshield coating</li><li>Paint Protection Film</li><li>PPF removal</li><li>Window tinting</li><li>Bike wash &amp; polishing</li><li>Detailing, PPF &amp; tint training</li></ul></div></section>
 <section class="band story"><div class="wrap"><div class="kicker">What customers say</div><h2>Passionate about every detail</h2>
 <p class="lead">A customer wrote: “Mr. Mohan doesn’t do detailing for the sake of it. He is very passionate about it and it reflects on how he goes about doing the job.”</p><div class="near"><div><b>Premium wash</b><span>From ₹700 for a small car (GST extra)</span></div><div><b>Ceramic coating</b><span>From ₹22,000 for a small car (GST extra)</span></div><div><b>Hours</b><span>Mon–Fri 10 AM–8 PM · Sat &amp; Sun 8 AM–8 PM</span></div></div></div></section>
+<section class="marquee" aria-hidden="true"><div class="mq"><span>Premium car wash</span><span>Wash &amp; wax</span><span>Engine bay cleaning</span><span>Headlight restoration</span><span>Interior cleaning</span><span>Level 1 polishing</span><span>Level 2 paint correction</span><span>9H nano ceramic coating</span><span>Graphene coating</span><span>Windshield coating</span><span>Paint Protection Film</span><span>PPF removal</span><span>Premium car wash</span><span>Wash &amp; wax</span><span>Engine bay cleaning</span><span>Headlight restoration</span><span>Interior cleaning</span><span>Level 1 polishing</span><span>Level 2 paint correction</span><span>9H nano ceramic coating</span><span>Graphene coating</span><span>Windshield coating</span><span>Paint Protection Film</span><span>PPF removal</span></div></section>
 <section class="tour" id="tour"><div class="head wrap"><div class="kicker">Inside the bay</div><h2 style="font-size:clamp(2.2rem,5.4vw,4rem);margin-top:10px">Every car, A to Z</h2></div>
 <div class="track" id="track"><figure class="card"><div class="pic"><img src="img/bay.jpg" alt="A bright, clean bay" loading="lazy"></div><figcaption><h3>A bright, clean bay</h3><p>Lit for spotting every swirl mark.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/innova.jpg" alt="Gloss you can see yourself in" loading="lazy"></div><figcaption><h3>Gloss you can see yourself in</h3><p>A finished Innova, fresh out of the bay.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/cabin.jpg" alt="Cabin care" loading="lazy"></div><figcaption><h3>Cabin care</h3><p>Seats, carpets, dashboard and door panels cleaned inside.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/baleno.jpg" alt="Back to new" loading="lazy"></div><figcaption><h3>Back to new</h3><p>A Baleno after polishing.</p></figcaption></figure></div></section>
 <section class="band faq" id="faq"><div class="wrap"><div class="kicker">Questions families ask</div><h2>Good to know</h2><details><summary>Where is Carglow Detailers?</summary><p>Plot #182, Dandeeswarar Nagar, Ram Nagar South, Madipakkam, Chennai 600 100.</p></details><details><summary>What facilities does Carglow Detailers have?</summary><p>Premium car wash, Wash &amp; wax, Engine bay cleaning, Headlight restoration, Interior cleaning, Level 1 polishing, Level 2 paint correction, 9H nano ceramic coating, Graphene coating, Windshield coating, Paint Protection Film, PPF removal, Window tinting, Bike wash &amp; polishing, Detailing, PPF &amp; tint training.</p></details><details><summary>How long does ceramic coating take?</summary><p>About 4 days: 2 days of preparation, then 48 hours of curing. Your car is delivered on the 4th day.</p></details><details><summary>How much is a premium car wash?</summary><p>₹700 for a small car, ₹750 for a medium car and ₹850 for an SUV, GST extra.</p></details><details><summary>How do I book Carglow Detailers?</summary><p>Carglow works by appointment only. Pick a date in the booking section of this page and send it on WhatsApp, or call +91 94980 68989.</p></details></div></section>
@@ -200,6 +218,7 @@ footer{background:var(--tint2);color:var(--muted)}
 <footer>Concept redesign prepared for Carglow by Janani Porkodi. All photos and details are from carglow.in.</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="919498068989", NAME="Carglow", WAQ="can I book my car in on {date}?";
@@ -223,21 +242,25 @@ if(shotAt!==undefined) document.querySelector(".concept").style.display="none";
 const tl=gsap.timeline({defaults:{ease:"none"},paused:reduce||shotAt!==undefined,scrollTrigger:(reduce||shotAt!==undefined)?undefined:{trigger:"#walk",start:"top top",end:"+=475%",scrub:0.8,pin:true,anticipatePin:1}});
 tl.to("#intro",{opacity:0,y:-30,duration:.5},0.2);
 tl.fromTo("#wf0",{scale:1.06},{scale:1.25,duration:1.6},0);
-tl.to("#wf1",{opacity:1,duration:.7,ease:"power1.inOut"},1.5);
+tl.fromTo("#wf1",{opacity:1,clipPath:"inset(100% 0% 0% 0%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:.8,ease:"power2.inOut"},1.4);
 tl.fromTo("#wf1",{scale:1.06},{scale:1.2,duration:1.6},1.7000000000000002);
 tl.to("#wc1",{opacity:1,duration:.35},2.0500000000000003);
-tl.to("#wf2",{opacity:1,duration:.7,ease:"power1.inOut"},2.8000000000000003);
+tl.fromTo("#wc1 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},2.08);
+tl.fromTo("#wf2",{opacity:1,clipPath:"circle(0% at 45% 50%)"},{clipPath:"circle(150% at 45% 50%)",duration:.85,ease:"power2.in"},2.7);
 tl.to("#wc1",{opacity:0,duration:.3},2.75);
 tl.fromTo("#wf2",{scale:1.06},{scale:1.2,duration:1.6},3.0);
 tl.to("#wc2",{opacity:1,duration:.35},3.35);
-tl.to("#wf3",{opacity:1,duration:.7,ease:"power1.inOut"},4.1);
+tl.fromTo("#wc2 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},3.38);
+tl.fromTo("#wf3",{opacity:1,clipPath:"inset(100% 0% 0% 0%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:.8,ease:"power2.inOut"},4.0);
 tl.to("#wc2",{opacity:0,duration:.3},4.05);
 tl.fromTo("#wf3",{scale:1.06},{scale:1.15,duration:1.6},4.3);
 tl.to("#wc3",{opacity:1,duration:.35},4.6499999999999995);
-tl.to("#wf4",{opacity:1,duration:.7,ease:"power1.inOut"},5.4);
+tl.fromTo("#wc3 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},4.68);
+tl.fromTo("#wf4",{opacity:1,clipPath:"circle(0% at 50% 55%)"},{clipPath:"circle(150% at 50% 55%)",duration:.85,ease:"power2.in"},5.3);
 tl.to("#wc3",{opacity:0,duration:.3},5.35);
 tl.fromTo("#wf4",{scale:1.06},{scale:1.15,duration:1.6},5.6);
 tl.to("#wc4",{opacity:1,duration:.35},5.949999999999999);
+tl.fromTo("#wc4 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},5.9799999999999995);
 tl.to({},{duration:.6},6.8999999999999995);
 if(reduce) tl.progress(1); else if(shotAt!==undefined) tl.progress(shotAt);
 
@@ -245,9 +268,34 @@ if(!reduce){
 document.querySelectorAll("[data-count]").forEach(el=>{const end=+el.dataset.count,o={v:0};gsap.to(o,{v:end,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"},onUpdate(){el.textContent=el.hasAttribute("data-plain")?Math.round(o.v):Math.round(o.v).toLocaleString("en-IN")}})});
 gsap.from(".extras li",{y:16,opacity:0,stagger:.05,duration:.5,scrollTrigger:{trigger:".extras",start:"top 90%"}});
 const track=document.getElementById("track");
-gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
+window.__hz=gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
 gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
 gsap.fromTo(".book .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".book",start:"top bottom",end:"bottom bottom",scrub:true}});
+
+const prog=document.getElementById("prog");
+if(prog) gsap.to(prog,{scaleX:1,ease:"none",scrollTrigger:{start:0,end:"max",scrub:0.3}});
+const split=el=>{if(!el||el.dataset.split)return[];el.dataset.split=1;const words=el.textContent.trim().split(/\s+/);el.textContent="";
+  return words.map((w,k)=>{const o=document.createElement("span");o.className="sw";const i=document.createElement("i");i.textContent=w;o.appendChild(i);el.appendChild(o);if(k<words.length-1)el.appendChild(document.createTextNode(" "));return i;});};
+if(shotAt===undefined){
+  const h1=split(document.querySelector("#intro h1"));
+  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:.25});
+  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:.55});
+  document.querySelectorAll(".band h2, .tour .head h2, .bk h2").forEach(h=>{const ws=split(h);
+    gsap.from(ws,{yPercent:115,duration:.9,ease:"power4.out",stagger:.05,scrollTrigger:{trigger:h,start:"top 88%"}});});
+  document.querySelectorAll(".band .lead, .band .kicker, .bk .lead, .faq details").forEach(el=>
+    gsap.from(el,{y:24,opacity:0,duration:.7,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 92%"}}));
+  gsap.from(".stat",{y:40,opacity:0,duration:.8,ease:"power3.out",stagger:.12,scrollTrigger:{trigger:".stats",start:"top 88%"}});
+  if(window.__hz) gsap.utils.toArray(".card").forEach(c=>gsap.fromTo(c,{rotate:3,y:50,opacity:.4},{rotate:0,y:0,opacity:1,ease:"none",
+    scrollTrigger:{trigger:c,containerAnimation:window.__hz,start:"left 95%",end:"left 45%",scrub:true}}));
+  const mq=document.querySelector(".mq");
+  if(mq){let skew=gsap.quickTo(mq,"skewX",{duration:.4,ease:"power3"});
+    ScrollTrigger.create({onUpdate:s=>skew(gsap.utils.clamp(-8,8,s.getVelocity()/-300))});}
+  if(typeof Lenis!=="undefined" && matchMedia("(pointer:fine)").matches){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const el=document.querySelector(a.getAttribute("href"));if(el){e.preventDefault();lenis.scrollTo(el,{offset:-10});}}));}
+}
+
 }
 })();
 </script>

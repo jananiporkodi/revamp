@@ -166,8 +166,25 @@ body{background:var(--paper);color:var(--ink)}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{margin:10px 0 0;color:var(--muted);max-width:70ch}
 footer{background:var(--tint2);color:var(--muted)}
+
+/* ---- motion layer v2 ---- */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent-dark);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}.sw>i{display:inline-block;font-style:inherit}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out infinite 1.2s;z-index:-1;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--accent-dark) 22%,transparent),transparent)}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.marquee{overflow:hidden;background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,3vh,30px) 0}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite;will-change:transform}
+.mq span{font:400 clamp(1.8rem,4.6vw,3.4rem)/1.1 var(--display);color:var(--accent-dark);white-space:nowrap;padding-right:.9em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--accent-dark)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.card:hover{transform:translateY(-8px)}.card:hover img{transform:scale(1.04)!important}}
+@media (prefers-reduced-motion:reduce){.mq,.btn::after{animation:none}}
 </style>
 </head><body>
+<div id="prog"></div>
 <div class="concept">Concept redesign for Mohana Mahal · not the official website</div>
 <nav class="nav"><a class="brand" href="#walk"><img src="img/logo.png" alt=""><span>Mohana Mahal</span></a><a class="btn" href="tel:+919444086161">Call to book</a></nav>
 
@@ -214,6 +231,7 @@ footer{background:var(--tint2);color:var(--muted)}
   <div class="kicker">The Mohana group</div><h2>One family of halls</h2><p class="lead">Weddings, receptions, corporate functions and intimate gatherings, in Velachery and Kelambakkam.</p>
   <div class="stats"><div class="stat"><b data-count="4">4</b><span>halls to choose from</span></div><div class="stat"><b data-count="3000">3000</b><span>guests at Mohana Mahal</span></div><div class="stat"><b data-count="1000">1000</b><span>seated at Mohana Mahal</span></div><div class="stat"><b data-count="30">30</b><span>A/C rooms at Mohana Mahal</span></div></div><ul class="extras"><li>Italian marble</li><li>Crystal chandeliers</li><li>Fully air-conditioned</li><li>Kitchen with dry &amp; wet store</li><li>Weddings &amp; receptions</li><li>Corporate events</li></ul></div></section>
 
+<section class="marquee" aria-hidden="true"><div class="mq"><span>Italian marble</span><span>Crystal chandeliers</span><span>Fully air-conditioned</span><span>Kitchen with dry &amp; wet store</span><span>Weddings &amp; receptions</span><span>Corporate events</span><span>Italian marble</span><span>Crystal chandeliers</span><span>Fully air-conditioned</span><span>Kitchen with dry &amp; wet store</span><span>Weddings &amp; receptions</span><span>Corporate events</span><span>Italian marble</span><span>Crystal chandeliers</span><span>Fully air-conditioned</span><span>Kitchen with dry &amp; wet store</span><span>Weddings &amp; receptions</span><span>Corporate events</span><span>Italian marble</span><span>Crystal chandeliers</span><span>Fully air-conditioned</span><span>Kitchen with dry &amp; wet store</span><span>Weddings &amp; receptions</span><span>Corporate events</span></div></section>
 <section class="tour" id="tour"><div class="head wrap"><div class="kicker">Inside the halls</div><h2 style="font-size:clamp(2.2rem,5.4vw,4rem);margin-top:10px">Made to impress</h2></div>
 <div class="track" id="track"><figure class="card"><div class="pic"><img src="img/arangam.jpg" alt="Golden reliefs" loading="lazy"></div><figcaption><h3>Golden reliefs</h3><p>Carved panels behind the stage at Mohana Arangam.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/aisle.jpg" alt="A grand aisle" loading="lazy"></div><figcaption><h3>A grand aisle</h3><p>Rows of dressed chairs leading to the stage.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/chandelier.jpg" alt="Crystal chandeliers" loading="lazy"></div><figcaption><h3>Crystal chandeliers</h3><p>Light that makes every photo glow.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/ceiling.jpg" alt="Lattice ceilings" loading="lazy"></div><figcaption><h3>Lattice ceilings</h3><p>Detail overhead, wherever your guests look.</p></figcaption></figure></div></section>
 <section class="band faq" id="faq"><div class="wrap"><div class="kicker">Questions families ask</div><h2>Good to know</h2><details><summary>How many guests can Mohana Mahal hold?</summary><p>Mohana Mini Hall seats 200, Mohana Convention Hall and Mohana Arangam seat 450 each, and Mohana Mahal seats 1,000 (3,000 standing).</p></details><details><summary>Where is Mohana Mahal?</summary><p>No. 131/137, Velachery By-Pass Road, Velachery, Chennai 600 042.</p></details><details><summary>What facilities does Mohana Mahal have?</summary><p>Italian marble, Crystal chandeliers, Fully air-conditioned, Kitchen with dry &amp; wet store, Weddings &amp; receptions, Corporate events.</p></details><details><summary>Which hall is in Velachery?</summary><p>Mohana Convention Hall is in Velachery. Mohana Mahal, Mohana Arangam and Mohana Mini Hall are in Kelambakkam.</p></details><details><summary>How do I check if Mohana Mahal is free on my date?</summary><p>Pick your date in the booking section of this page and send it on WhatsApp, or call +91 94440 86161.</p></details></div></section>
@@ -226,15 +244,16 @@ footer{background:var(--tint2);color:var(--muted)}
 <footer>Concept redesign prepared for Mohana Mahal by Janani Porkodi. All photos and details are from mohanamahal.in.</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
-const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="919444086161", NAME="Mohana Mahal";
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="919444086161", NAME="Mohana Mahal", WAQ="is the hall available on {date}?";
 gsap.registerPlugin(ScrollTrigger);
 
 document.getElementById("dateform").addEventListener("submit",e=>{
   e.preventDefault(); const d=document.getElementById("mdate").value; if(!d) return;
   const nice=new Date(d+"T00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"});
-  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(`Hello ${NAME}, is the hall available on ${nice}?`),"_blank");
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(`Hello ${NAME}, ${WAQ.replace("{date}",nice)}`),"_blank");
 });
 const sp=document.getElementById("sparks"); let sparkY=()=>{};
 if(sp&&!reduce){const x=sp.getContext("2d");let w,h,pts=[],edge=-1;
@@ -268,9 +287,34 @@ if(!reduce){
 document.querySelectorAll("[data-count]").forEach(el=>{const end=+el.dataset.count,o={v:0};gsap.to(o,{v:end,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"},onUpdate(){el.textContent=el.hasAttribute("data-plain")?Math.round(o.v):Math.round(o.v).toLocaleString("en-IN")}})});
 gsap.from(".extras li",{y:16,opacity:0,stagger:.05,duration:.5,scrollTrigger:{trigger:".extras",start:"top 90%"}});
 const track=document.getElementById("track");
-gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
+window.__hz=gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
 gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
 gsap.fromTo(".book .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".book",start:"top bottom",end:"bottom bottom",scrub:true}});
+
+const prog=document.getElementById("prog");
+if(prog) gsap.to(prog,{scaleX:1,ease:"none",scrollTrigger:{start:0,end:"max",scrub:0.3}});
+const split=el=>{if(!el||el.dataset.split)return[];el.dataset.split=1;const words=el.textContent.trim().split(/\s+/);el.textContent="";
+  return words.map((w,k)=>{const o=document.createElement("span");o.className="sw";const i=document.createElement("i");i.textContent=w;o.appendChild(i);el.appendChild(o);if(k<words.length-1)el.appendChild(document.createTextNode(" "));return i;});};
+if(shotAt===undefined){
+  const h1=split(document.querySelector("#intro h1"));
+  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:.25});
+  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:.55});
+  document.querySelectorAll(".band h2, .tour .head h2, .bk h2").forEach(h=>{const ws=split(h);
+    gsap.from(ws,{yPercent:115,duration:.9,ease:"power4.out",stagger:.05,scrollTrigger:{trigger:h,start:"top 88%"}});});
+  document.querySelectorAll(".band .lead, .band .kicker, .bk .lead, .faq details").forEach(el=>
+    gsap.from(el,{y:24,opacity:0,duration:.7,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 92%"}}));
+  gsap.from(".stat",{y:40,opacity:0,duration:.8,ease:"power3.out",stagger:.12,scrollTrigger:{trigger:".stats",start:"top 88%"}});
+  if(window.__hz) gsap.utils.toArray(".card").forEach(c=>gsap.fromTo(c,{rotate:3,y:50,opacity:.4},{rotate:0,y:0,opacity:1,ease:"none",
+    scrollTrigger:{trigger:c,containerAnimation:window.__hz,start:"left 95%",end:"left 45%",scrub:true}}));
+  const mq=document.querySelector(".mq");
+  if(mq){let skew=gsap.quickTo(mq,"skewX",{duration:.4,ease:"power3"});
+    ScrollTrigger.create({onUpdate:s=>skew(gsap.utils.clamp(-8,8,s.getVelocity()/-300))});}
+  if(typeof Lenis!=="undefined" && matchMedia("(pointer:fine)").matches){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const el=document.querySelector(a.getAttribute("href"));if(el){e.preventDefault();lenis.scrollTo(el,{offset:-10});}}));}
+}
+
 }
 })();
 </script>

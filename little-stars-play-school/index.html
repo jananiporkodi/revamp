@@ -166,8 +166,25 @@ body{background:var(--paper);color:var(--ink)}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{margin:10px 0 0;color:var(--muted);max-width:70ch}
 footer{background:var(--tint2);color:var(--muted)}
+
+/* ---- motion layer v2 ---- */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent-dark);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}.sw>i{display:inline-block;font-style:inherit}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out infinite 1.2s;z-index:-1;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--accent-dark) 22%,transparent),transparent)}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.marquee{overflow:hidden;background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,3vh,30px) 0}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite;will-change:transform}
+.mq span{font:400 clamp(1.8rem,4.6vw,3.4rem)/1.1 var(--display);color:var(--accent-dark);white-space:nowrap;padding-right:.9em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--accent-dark)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.card:hover{transform:translateY(-8px)}.card:hover img{transform:scale(1.04)!important}}
+@media (prefers-reduced-motion:reduce){.mq,.btn::after{animation:none}}
 .brand img{width:auto;height:30px;border-radius:0;background:none}</style>
 </head><body>
+<div id="prog"></div>
 <div class="concept">Concept redesign for Little Stars · not the official website</div>
 <nav class="nav"><a class="brand" href="#walk"><img src="img/logo.png" alt=""><span>Little Stars</span></a><a class="btn" href="tel:+917200228559">Call to book</a></nav>
 
@@ -188,6 +205,7 @@ footer{background:var(--tint2);color:var(--muted)}
   <div class="stats"><div class="stat"><b data-count="2022" data-plain>2022</b><span>opened in Gangai Nagar</span></div><div class="stat"><b data-count="5">5</b><span>programmes, from play group to day care</span></div><div class="stat"><b data-count="4">4</b><span>after-school activities</span></div></div><ul class="extras"><li>Play Group (1½–2½ yrs)</li><li>Pre KG (2½–3½ yrs)</li><li>LKG &amp; UKG</li><li>Day care (above 1½ yrs)</li><li>Montessori Method</li><li>STEM learning</li><li>Phonics</li><li>Library time</li><li>Water &amp; sand play</li><li>Field trips</li><li>Puppet shows &amp; skits</li><li>Karate &amp; yoga</li><li>Bharatanatyam</li><li>Violin</li><li>Drawing &amp; handwriting</li></ul></div></section>
 <section class="band story"><div class="wrap"><div class="kicker">Our mission</div><h2>A love of learning, through play</h2>
 <p class="lead">Little Stars helps children develop a love of learning through play, builds a foundation for independence, cultivates social and emotional development and enables academic growth.</p><div class="near"><div><b>Play Group</b><span>1½ to 2½ years: free play, dance, music and stories</span></div><div><b>Pre KG</b><span>2½ to 3½ years: first writing, counting and rhymes</span></div><div><b>LKG &amp; UKG</b><span>3½ to 5½ years: English, Math, EVS, art, bhajan and dance</span></div></div></div></section>
+<section class="marquee" aria-hidden="true"><div class="mq"><span>Play Group (1½–2½ yrs)</span><span>Pre KG (2½–3½ yrs)</span><span>LKG &amp; UKG</span><span>Day care (above 1½ yrs)</span><span>Montessori Method</span><span>STEM learning</span><span>Phonics</span><span>Library time</span><span>Water &amp; sand play</span><span>Field trips</span><span>Puppet shows &amp; skits</span><span>Karate &amp; yoga</span><span>Play Group (1½–2½ yrs)</span><span>Pre KG (2½–3½ yrs)</span><span>LKG &amp; UKG</span><span>Day care (above 1½ yrs)</span><span>Montessori Method</span><span>STEM learning</span><span>Phonics</span><span>Library time</span><span>Water &amp; sand play</span><span>Field trips</span><span>Puppet shows &amp; skits</span><span>Karate &amp; yoga</span></div></section>
 <section class="tour" id="tour"><div class="head wrap"><div class="kicker">Life at Little Stars</div><h2 style="font-size:clamp(2.2rem,5.4vw,4rem);margin-top:10px">Every month, a new theme</h2></div>
 <div class="track" id="track"><figure class="card"><div class="pic"><img src="img/handprint.jpg" alt="Little hands, big prints" loading="lazy"></div><figcaption><h3>Little hands, big prints</h3><p>Hand-print art on the first day.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/lotus.jpg" alt="Dress-up days" loading="lazy"></div><figcaption><h3>Dress-up days</h3><p>A smile in the middle of a paper lotus.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/christmas.jpg" alt="Every festival, celebrated" loading="lazy"></div><figcaption><h3>Every festival, celebrated</h3><p>Christmas with Santa caps and gifts.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/abc.jpg" alt="Walls that teach" loading="lazy"></div><figcaption><h3>Walls that teach</h3><p>Alphabet and picture murals all around the room.</p></figcaption></figure></div></section>
 <section class="band faq" id="faq"><div class="wrap"><div class="kicker">Questions families ask</div><h2>Good to know</h2><details><summary>Where is Little Stars Play School?</summary><p>20, 1st Cross St, Gangai Nagar, Velachery, Chennai 600 042.</p></details><details><summary>What facilities does Little Stars Play School have?</summary><p>Play Group (1½–2½ yrs), Pre KG (2½–3½ yrs), LKG &amp; UKG, Day care (above 1½ yrs), Montessori Method, STEM learning, Phonics, Library time, Water &amp; sand play, Field trips, Puppet shows &amp; skits, Karate &amp; yoga, Bharatanatyam, Violin, Drawing &amp; handwriting.</p></details><details><summary>What ages do you take?</summary><p>Play group from 1½ years, Pre KG from 2½, LKG and UKG from 3½ to 5½ years. Day care is open to children above 1½ years.</p></details><details><summary>Are there after-school activities?</summary><p>Yes: karate and yoga, Bharatanatyam, violin, and drawing and handwriting.</p></details><details><summary>How do I visit Little Stars Play School?</summary><p>Pick a date in the booking section of this page and send it on WhatsApp, or call +91 72002 28559.</p></details></div></section>
@@ -200,6 +218,7 @@ footer{background:var(--tint2);color:var(--muted)}
 <footer>Concept redesign prepared for Little Stars by Janani Porkodi. All photos and details are from littlestarsplayschools.com.</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="917200228559", NAME="Little Stars", WAQ="can we visit the school on {date}?";
@@ -223,21 +242,25 @@ if(shotAt!==undefined) document.querySelector(".concept").style.display="none";
 const tl=gsap.timeline({defaults:{ease:"none"},paused:reduce||shotAt!==undefined,scrollTrigger:(reduce||shotAt!==undefined)?undefined:{trigger:"#walk",start:"top top",end:"+=475%",scrub:0.8,pin:true,anticipatePin:1}});
 tl.to("#intro",{opacity:0,y:-30,duration:.5},0.2);
 tl.fromTo("#wf0",{scale:1.06},{scale:1.25,duration:1.6},0);
-tl.to("#wf1",{opacity:1,duration:.7,ease:"power1.inOut"},1.5);
+tl.fromTo("#wf1",{opacity:1,clipPath:"inset(100% 0% 0% 0%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:.8,ease:"power2.inOut"},1.4);
 tl.fromTo("#wf1",{scale:1.06},{scale:1.2,duration:1.6},1.7000000000000002);
 tl.to("#wc1",{opacity:1,duration:.35},2.0500000000000003);
-tl.to("#wf2",{opacity:1,duration:.7,ease:"power1.inOut"},2.8000000000000003);
+tl.fromTo("#wc1 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},2.08);
+tl.fromTo("#wf2",{opacity:1,clipPath:"circle(0% at 50% 60%)"},{clipPath:"circle(150% at 50% 60%)",duration:.85,ease:"power2.in"},2.7);
 tl.to("#wc1",{opacity:0,duration:.3},2.75);
 tl.fromTo("#wf2",{scale:1.06},{scale:1.2,duration:1.6},3.0);
 tl.to("#wc2",{opacity:1,duration:.35},3.35);
-tl.to("#wf3",{opacity:1,duration:.7,ease:"power1.inOut"},4.1);
+tl.fromTo("#wc2 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},3.38);
+tl.fromTo("#wf3",{opacity:1,clipPath:"inset(100% 0% 0% 0%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:.8,ease:"power2.inOut"},4.0);
 tl.to("#wc2",{opacity:0,duration:.3},4.05);
 tl.fromTo("#wf3",{scale:1.06},{scale:1.15,duration:1.6},4.3);
 tl.to("#wc3",{opacity:1,duration:.35},4.6499999999999995);
-tl.to("#wf4",{opacity:1,duration:.7,ease:"power1.inOut"},5.4);
+tl.fromTo("#wc3 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},4.68);
+tl.fromTo("#wf4",{opacity:1,clipPath:"circle(0% at 40% 60%)"},{clipPath:"circle(150% at 40% 60%)",duration:.85,ease:"power2.in"},5.3);
 tl.to("#wc3",{opacity:0,duration:.3},5.35);
 tl.fromTo("#wf4",{scale:1.06},{scale:1.15,duration:1.6},5.6);
 tl.to("#wc4",{opacity:1,duration:.35},5.949999999999999);
+tl.fromTo("#wc4 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},5.9799999999999995);
 tl.to({},{duration:.6},6.8999999999999995);
 if(reduce) tl.progress(1); else if(shotAt!==undefined) tl.progress(shotAt);
 
@@ -245,9 +268,34 @@ if(!reduce){
 document.querySelectorAll("[data-count]").forEach(el=>{const end=+el.dataset.count,o={v:0};gsap.to(o,{v:end,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"},onUpdate(){el.textContent=el.hasAttribute("data-plain")?Math.round(o.v):Math.round(o.v).toLocaleString("en-IN")}})});
 gsap.from(".extras li",{y:16,opacity:0,stagger:.05,duration:.5,scrollTrigger:{trigger:".extras",start:"top 90%"}});
 const track=document.getElementById("track");
-gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
+window.__hz=gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
 gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
 gsap.fromTo(".book .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".book",start:"top bottom",end:"bottom bottom",scrub:true}});
+
+const prog=document.getElementById("prog");
+if(prog) gsap.to(prog,{scaleX:1,ease:"none",scrollTrigger:{start:0,end:"max",scrub:0.3}});
+const split=el=>{if(!el||el.dataset.split)return[];el.dataset.split=1;const words=el.textContent.trim().split(/\s+/);el.textContent="";
+  return words.map((w,k)=>{const o=document.createElement("span");o.className="sw";const i=document.createElement("i");i.textContent=w;o.appendChild(i);el.appendChild(o);if(k<words.length-1)el.appendChild(document.createTextNode(" "));return i;});};
+if(shotAt===undefined){
+  const h1=split(document.querySelector("#intro h1"));
+  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:.25});
+  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:.55});
+  document.querySelectorAll(".band h2, .tour .head h2, .bk h2").forEach(h=>{const ws=split(h);
+    gsap.from(ws,{yPercent:115,duration:.9,ease:"power4.out",stagger:.05,scrollTrigger:{trigger:h,start:"top 88%"}});});
+  document.querySelectorAll(".band .lead, .band .kicker, .bk .lead, .faq details").forEach(el=>
+    gsap.from(el,{y:24,opacity:0,duration:.7,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 92%"}}));
+  gsap.from(".stat",{y:40,opacity:0,duration:.8,ease:"power3.out",stagger:.12,scrollTrigger:{trigger:".stats",start:"top 88%"}});
+  if(window.__hz) gsap.utils.toArray(".card").forEach(c=>gsap.fromTo(c,{rotate:3,y:50,opacity:.4},{rotate:0,y:0,opacity:1,ease:"none",
+    scrollTrigger:{trigger:c,containerAnimation:window.__hz,start:"left 95%",end:"left 45%",scrub:true}}));
+  const mq=document.querySelector(".mq");
+  if(mq){let skew=gsap.quickTo(mq,"skewX",{duration:.4,ease:"power3"});
+    ScrollTrigger.create({onUpdate:s=>skew(gsap.utils.clamp(-8,8,s.getVelocity()/-300))});}
+  if(typeof Lenis!=="undefined" && matchMedia("(pointer:fine)").matches){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const el=document.querySelector(a.getAttribute("href"));if(el){e.preventDefault();lenis.scrollTo(el,{offset:-10});}}));}
+}
+
 }
 })();
 </script>

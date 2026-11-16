@@ -166,8 +166,25 @@ body{background:var(--paper);color:var(--ink)}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{margin:10px 0 0;color:var(--muted);max-width:70ch}
 footer{background:var(--tint2);color:var(--muted)}
+
+/* ---- motion layer v2 ---- */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent-dark);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}.sw>i{display:inline-block;font-style:inherit}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out infinite 1.2s;z-index:-1;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--accent-dark) 22%,transparent),transparent)}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.marquee{overflow:hidden;background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,3vh,30px) 0}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite;will-change:transform}
+.mq span{font:400 clamp(1.8rem,4.6vw,3.4rem)/1.1 var(--display);color:var(--accent-dark);white-space:nowrap;padding-right:.9em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--accent-dark)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.card:hover{transform:translateY(-8px)}.card:hover img{transform:scale(1.04)!important}}
+@media (prefers-reduced-motion:reduce){.mq,.btn::after{animation:none}}
 </style>
 </head><body>
+<div id="prog"></div>
 <div class="concept">Concept redesign for Rose Foods · not the official website</div>
 <nav class="nav"><a class="brand" href="#walk"><img src="img/logo.png" alt=""><span>Rose Foods</span></a><a class="btn" href="tel:+917358692860">Call to book</a></nav>
 
@@ -191,6 +208,7 @@ footer{background:var(--tint2);color:var(--muted)}
   <div class="stats"><div class="stat"><b data-count="3500">3500</b><span>₹ a month, breakfast only</span></div><div class="stat"><b data-count="4000">4000</b><span>₹ a month, lunch only</span></div><div class="stat"><b data-count="5000">5000</b><span>₹ a month, any two meals</span></div><div class="stat"><b data-count="6000">6000</b><span>₹ a month, all three meals, from</span></div></div><ul class="extras"><li>South Indian meals</li><li>Diet plans</li><li>Customised meals</li><li>Budget meal plan</li><li>Weekly &amp; monthly subscriptions</li><li>Non-veg two days a week</li><li>No artificial preservatives</li><li>Sunflower, groundnut &amp; coconut oils only</li><li>Doorstep delivery</li></ul></div></section>
 <section class="band story"><div class="wrap"><div class="kicker">Why Rose Foods</div><h2>For busy days, and every day</h2>
 <p class="lead">For working professionals, students, elderly people and families who want wholesome food without the hassle: fresh, hygienically prepared home-cooked meals, as a nutritious and affordable alternative to restaurant or fast food.</p><div class="near"><div><b>Breakfast</b><span>Idly, dosa, pongal vadai, poori, kichidi, upma</span></div><div><b>Lunch</b><span>Rice, poriyal, kootu, kulambu, rasam, curd</span></div><div><b>Dinner</b><span>Idly, dosa, chapathi, uthappam, adai</span></div></div></div></section>
+<section class="marquee" aria-hidden="true"><div class="mq"><span>South Indian meals</span><span>Diet plans</span><span>Customised meals</span><span>Budget meal plan</span><span>Weekly &amp; monthly subscriptions</span><span>Non-veg two days a week</span><span>No artificial preservatives</span><span>Sunflower, groundnut &amp; coconut oils only</span><span>Doorstep delivery</span><span>South Indian meals</span><span>Diet plans</span><span>Customised meals</span><span>South Indian meals</span><span>Diet plans</span><span>Customised meals</span><span>Budget meal plan</span><span>Weekly &amp; monthly subscriptions</span><span>Non-veg two days a week</span><span>No artificial preservatives</span><span>Sunflower, groundnut &amp; coconut oils only</span><span>Doorstep delivery</span><span>South Indian meals</span><span>Diet plans</span><span>Customised meals</span></div></section>
 <section class="tour" id="tour"><div class="head wrap"><div class="kicker">On the plate</div><h2 style="font-size:clamp(2.2rem,5.4vw,4rem);margin-top:10px">What a week tastes like</h2></div>
 <div class="track" id="track"><figure class="card"><div class="pic"><img src="img/leaf.jpg" alt="Lunch on a banana leaf" loading="lazy"></div><figcaption><h3>Lunch on a banana leaf</h3><p>Rice, sambar, kulambu, poriyal and more.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/chapathi.jpg" alt="Chapathi for dinner" loading="lazy"></div><figcaption><h3>Chapathi for dinner</h3><p>With kurma and fresh sides.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/boxes.jpg" alt="Packed fresh" loading="lazy"></div><figcaption><h3>Packed fresh</h3><p>Meals sealed and delivered to your doorstep.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/menu.jpg" alt="Pick your plan" loading="lazy"></div><figcaption><h3>Pick your plan</h3><p>Paramparyam, Premium, Economy, Budget and Healthy Diet menus.</p></figcaption></figure></div></section>
 <section class="band faq" id="faq"><div class="wrap"><div class="kicker">Questions families ask</div><h2>Good to know</h2><details><summary>Where is Rose Homemade Foods?</summary><p>Plot No. 65, Vaigai Street, Ram Nagar South, Madipakkam, Chennai 600 091.</p></details><details><summary>What facilities does Rose Homemade Foods have?</summary><p>South Indian meals, Diet plans, Customised meals, Budget meal plan, Weekly &amp; monthly subscriptions, Non-veg two days a week, No artificial preservatives, Sunflower, groundnut &amp; coconut oils only, Doorstep delivery.</p></details><details><summary>How much does a monthly plan cost?</summary><p>Breakfast, lunch and dinner from ₹6,000 to ₹7,500 a month. Breakfast only ₹3,500, lunch only ₹4,000, dinner only ₹3,500, any two meals ₹5,000.</p></details><details><summary>Is non-veg available?</summary><p>Yes, any two days a week: fish gravy, chicken gravy, biryani, egg, fish fry or dry fish gravy. Special non-veg orders are also available.</p></details><details><summary>Which oils do you use?</summary><p>Only refined sunflower, groundnut and coconut oils.</p></details><details><summary>How do I start a meal plan with Rose Homemade Foods?</summary><p>Pick your start date in the meal plan section of this page and send it on WhatsApp, or call +91 73586 92860.</p></details></div></section>
@@ -203,6 +221,7 @@ footer{background:var(--tint2);color:var(--muted)}
 <footer>Concept redesign prepared for Rose Foods by Janani Porkodi. All photos and details are from rosefoods.co.in.</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="917358692860", NAME="Rose Foods", WAQ="can I start a meal plan from {date}?";
@@ -229,15 +248,15 @@ tl.fromTo("#art",{scale:1.04},{scale:1.7,duration:2.2,ease:"power1.in"},0.2);
 tl.to("#artcap",{opacity:1,duration:.4},0.5).to("#artcap",{opacity:0,duration:.3},1.5);
 tl.to("#artshade",{opacity:0,duration:.6},0.4);
 tl.to("#artveil",{opacity:1,duration:.8},1.6);
-tl.fromTo("#pc0",{opacity:0,y:80,scale:.86,rotate:2},{opacity:1,y:0,scale:1,rotate:0,duration:.8,ease:"power2.out"},1.8);
+tl.fromTo("#pc0",{opacity:0,y:90,scale:.82,rotate:3,rotationY:18,transformPerspective:900},{opacity:1,y:0,scale:1,rotate:0,rotationY:0,duration:.85,ease:"back.out(1.4)"},1.8);
 tl.to("#pcap0",{opacity:1,duration:.35},2.2);
 tl.to("#pcap0",{opacity:0,duration:.3},3.1);
 tl.to("#pc0",{opacity:0,y:-60,scale:.94,duration:.6},3.1);
-tl.fromTo("#pc1",{opacity:0,y:80,scale:.86,rotate:-2},{opacity:1,y:0,scale:1,rotate:0,duration:.8,ease:"power2.out"},3.3);
+tl.fromTo("#pc1",{opacity:0,y:90,scale:.82,rotate:-3,rotationY:-18,transformPerspective:900},{opacity:1,y:0,scale:1,rotate:0,rotationY:0,duration:.85,ease:"back.out(1.4)"},3.3);
 tl.to("#pcap1",{opacity:1,duration:.35},3.6999999999999997);
 tl.to("#pcap1",{opacity:0,duration:.3},4.6);
 tl.to("#pc1",{opacity:0,y:-60,scale:.94,duration:.6},4.6);
-tl.fromTo("#pc2",{opacity:0,y:80,scale:.86,rotate:2},{opacity:1,y:0,scale:1,rotate:0,duration:.8,ease:"power2.out"},4.8);
+tl.fromTo("#pc2",{opacity:0,y:90,scale:.82,rotate:3,rotationY:18,transformPerspective:900},{opacity:1,y:0,scale:1,rotate:0,rotationY:0,duration:.85,ease:"back.out(1.4)"},4.8);
 tl.to("#pcap2",{opacity:1,duration:.35},5.2);
 tl.to({},{duration:.5},6.3);
 if(reduce) tl.progress(1); else if(shotAt!==undefined) tl.progress(shotAt);
@@ -246,9 +265,34 @@ if(!reduce){
 document.querySelectorAll("[data-count]").forEach(el=>{const end=+el.dataset.count,o={v:0};gsap.to(o,{v:end,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"},onUpdate(){el.textContent=el.hasAttribute("data-plain")?Math.round(o.v):Math.round(o.v).toLocaleString("en-IN")}})});
 gsap.from(".extras li",{y:16,opacity:0,stagger:.05,duration:.5,scrollTrigger:{trigger:".extras",start:"top 90%"}});
 const track=document.getElementById("track");
-gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
+window.__hz=gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
 gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
 gsap.fromTo(".book .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".book",start:"top bottom",end:"bottom bottom",scrub:true}});
+
+const prog=document.getElementById("prog");
+if(prog) gsap.to(prog,{scaleX:1,ease:"none",scrollTrigger:{start:0,end:"max",scrub:0.3}});
+const split=el=>{if(!el||el.dataset.split)return[];el.dataset.split=1;const words=el.textContent.trim().split(/\s+/);el.textContent="";
+  return words.map((w,k)=>{const o=document.createElement("span");o.className="sw";const i=document.createElement("i");i.textContent=w;o.appendChild(i);el.appendChild(o);if(k<words.length-1)el.appendChild(document.createTextNode(" "));return i;});};
+if(shotAt===undefined){
+  const h1=split(document.querySelector("#intro h1"));
+  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:.25});
+  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:.55});
+  document.querySelectorAll(".band h2, .tour .head h2, .bk h2").forEach(h=>{const ws=split(h);
+    gsap.from(ws,{yPercent:115,duration:.9,ease:"power4.out",stagger:.05,scrollTrigger:{trigger:h,start:"top 88%"}});});
+  document.querySelectorAll(".band .lead, .band .kicker, .bk .lead, .faq details").forEach(el=>
+    gsap.from(el,{y:24,opacity:0,duration:.7,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 92%"}}));
+  gsap.from(".stat",{y:40,opacity:0,duration:.8,ease:"power3.out",stagger:.12,scrollTrigger:{trigger:".stats",start:"top 88%"}});
+  if(window.__hz) gsap.utils.toArray(".card").forEach(c=>gsap.fromTo(c,{rotate:3,y:50,opacity:.4},{rotate:0,y:0,opacity:1,ease:"none",
+    scrollTrigger:{trigger:c,containerAnimation:window.__hz,start:"left 95%",end:"left 45%",scrub:true}}));
+  const mq=document.querySelector(".mq");
+  if(mq){let skew=gsap.quickTo(mq,"skewX",{duration:.4,ease:"power3"});
+    ScrollTrigger.create({onUpdate:s=>skew(gsap.utils.clamp(-8,8,s.getVelocity()/-300))});}
+  if(typeof Lenis!=="undefined" && matchMedia("(pointer:fine)").matches){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const el=document.querySelector(a.getAttribute("href"));if(el){e.preventDefault();lenis.scrollTo(el,{offset:-10});}}));}
+}
+
 }
 })();
 </script>

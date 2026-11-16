@@ -166,8 +166,25 @@ body{background:var(--paper);color:var(--ink)}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{margin:10px 0 0;color:var(--muted);max-width:70ch}
 footer{background:var(--tint2);color:var(--muted)}
+
+/* ---- motion layer v2 ---- */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent-dark);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}.sw>i{display:inline-block;font-style:inherit}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out infinite 1.2s;z-index:-1;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--accent-dark) 22%,transparent),transparent)}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.marquee{overflow:hidden;background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,3vh,30px) 0}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite;will-change:transform}
+.mq span{font:400 clamp(1.8rem,4.6vw,3.4rem)/1.1 var(--display);color:var(--accent-dark);white-space:nowrap;padding-right:.9em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--accent-dark)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.card:hover{transform:translateY(-8px)}.card:hover img{transform:scale(1.04)!important}}
+@media (prefers-reduced-motion:reduce){.mq,.btn::after{animation:none}}
 </style>
 </head><body>
+<div id="prog"></div>
 <div class="concept">Concept redesign for Prime Fitness Hub · not the official website</div>
 <nav class="nav"><a class="brand" href="#walk"><img src="img/logo.png" alt=""><span>Prime Fitness Hub</span></a><a class="btn" href="tel:+917305560324">Call to book</a></nav>
 
@@ -188,6 +205,7 @@ footer{background:var(--tint2);color:var(--muted)}
   <div class="stats"><div class="stat"><b data-count="9">9</b><span>ways to train, from CrossFit to Zumba</span></div><div class="stat"><b data-count="3">3</b><span>core programmes: training, classes, nutrition</span></div></div><ul class="extras"><li>Personal training</li><li>Group fitness classes</li><li>Nutrition consulting</li><li>CrossFit</li><li>HIIT classes</li><li>Aerobics</li><li>Weight training</li><li>Zumba</li><li>Adult sports</li><li>Women&#x27;s gym</li><li>Unisex gym</li></ul></div></section>
 <section class="band story"><div class="wrap"><div class="kicker">Our mission</div><h2>A welcoming space for every level</h2>
 <p class="lead">Cutting-edge equipment, diverse classes and expert guidance tailored to all fitness levels, from one-on-one personal training to group classes.</p><div class="near"><div><b>Kaashyap Enclave</b><span>Office-B, 1st floor, Velachery Main Road</span></div><div><b>Dhandeswaram Nagar</b><span>Velachery, Chennai 600 042</span></div></div></div></section>
+<section class="marquee" aria-hidden="true"><div class="mq"><span>Personal training</span><span>Group fitness classes</span><span>Nutrition consulting</span><span>CrossFit</span><span>HIIT classes</span><span>Aerobics</span><span>Weight training</span><span>Zumba</span><span>Adult sports</span><span>Women&#x27;s gym</span><span>Unisex gym</span><span>Personal training</span><span>Personal training</span><span>Group fitness classes</span><span>Nutrition consulting</span><span>CrossFit</span><span>HIIT classes</span><span>Aerobics</span><span>Weight training</span><span>Zumba</span><span>Adult sports</span><span>Women&#x27;s gym</span><span>Unisex gym</span><span>Personal training</span></div></section>
 <section class="tour" id="tour"><div class="head wrap"><div class="kicker">Inside the hub</div><h2 style="font-size:clamp(2.2rem,5.4vw,4rem);margin-top:10px">Built to push limits</h2></div>
 <div class="track" id="track"><figure class="card"><div class="pic"><img src="img/wall.jpg" alt="Find the orange wall" loading="lazy"></div><figcaption><h3>Find the orange wall</h3><p>Prime Fitness Hub, Velachery.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/machines.jpg" alt="Strength machines" loading="lazy"></div><figcaption><h3>Strength machines</h3><p>Plate-loaded and cable machines for every muscle group.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/lane.jpg" alt="Room to lift" loading="lazy"></div><figcaption><h3>Room to lift</h3><p>Platforms and benches down the length of the floor.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/entry.jpg" alt="Bright from end to end" loading="lazy"></div><figcaption><h3>Bright from end to end</h3><p>Strip lights and mirrors across the gym.</p></figcaption></figure></div></section>
 <section class="band faq" id="faq"><div class="wrap"><div class="kicker">Questions families ask</div><h2>Good to know</h2><details><summary>Where is Prime Fitness Hub?</summary><p>Office-B, I Floor, Kaashyap Enclave, 13-A/209, Velachery Main Road, Dhandeswaram Nagar, Velachery, Chennai 600 042.</p></details><details><summary>What facilities does Prime Fitness Hub have?</summary><p>Personal training, Group fitness classes, Nutrition consulting, CrossFit, HIIT classes, Aerobics, Weight training, Zumba, Adult sports, Women&#x27;s gym, Unisex gym.</p></details><details><summary>Is there a women&#x27;s gym?</summary><p>Yes. Prime Fitness Hub offers women&#x27;s gym and unisex gym services in Velachery.</p></details><details><summary>Do you offer nutrition advice?</summary><p>Yes. Nutrition consulting with customised meal plans to support your training.</p></details><details><summary>How do I visit Prime Fitness Hub?</summary><p>Pick your date in the booking section of this page and send it on WhatsApp, or call +91 73055 60324.</p></details></div></section>
@@ -200,6 +218,7 @@ footer{background:var(--tint2);color:var(--muted)}
 <footer>Concept redesign prepared for Prime Fitness Hub by Janani Porkodi. All photos and details are from primefitnesshub.in.</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="917305560324", NAME="Prime Fitness Hub", WAQ="can I come for a visit on {date}?";
@@ -223,17 +242,20 @@ if(shotAt!==undefined) document.querySelector(".concept").style.display="none";
 const tl=gsap.timeline({defaults:{ease:"none"},paused:reduce||shotAt!==undefined,scrollTrigger:(reduce||shotAt!==undefined)?undefined:{trigger:"#walk",start:"top top",end:"+=380%",scrub:0.8,pin:true,anticipatePin:1}});
 tl.to("#intro",{opacity:0,y:-30,duration:.5},0.2);
 tl.fromTo("#wf0",{scale:1.06},{scale:1.2,duration:1.6},0);
-tl.to("#wf1",{opacity:1,duration:.7,ease:"power1.inOut"},1.5);
+tl.fromTo("#wf1",{opacity:1,clipPath:"inset(100% 0% 0% 0%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:.8,ease:"power2.inOut"},1.4);
 tl.fromTo("#wf1",{scale:1.06},{scale:1.2,duration:1.6},1.7000000000000002);
 tl.to("#wc1",{opacity:1,duration:.35},2.0500000000000003);
-tl.to("#wf2",{opacity:1,duration:.7,ease:"power1.inOut"},2.8000000000000003);
+tl.fromTo("#wc1 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},2.08);
+tl.fromTo("#wf2",{opacity:1,clipPath:"circle(0% at 50% 55%)"},{clipPath:"circle(150% at 50% 55%)",duration:.85,ease:"power2.in"},2.7);
 tl.to("#wc1",{opacity:0,duration:.3},2.75);
 tl.fromTo("#wf2",{scale:1.06},{scale:1.2,duration:1.6},3.0);
 tl.to("#wc2",{opacity:1,duration:.35},3.35);
-tl.to("#wf3",{opacity:1,duration:.7,ease:"power1.inOut"},4.1);
+tl.fromTo("#wc2 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},3.38);
+tl.fromTo("#wf3",{opacity:1,clipPath:"inset(100% 0% 0% 0%)"},{clipPath:"inset(0% 0% 0% 0%)",duration:.8,ease:"power2.inOut"},4.0);
 tl.to("#wc2",{opacity:0,duration:.3},4.05);
 tl.fromTo("#wf3",{scale:1.06},{scale:1.15,duration:1.6},4.3);
 tl.to("#wc3",{opacity:1,duration:.35},4.6499999999999995);
+tl.fromTo("#wc3 > *",{y:26,opacity:0},{y:0,opacity:1,duration:.4,stagger:.08,ease:"power2.out"},4.68);
 tl.to({},{duration:.6},5.6);
 if(reduce) tl.progress(1); else if(shotAt!==undefined) tl.progress(shotAt);
 
@@ -241,9 +263,34 @@ if(!reduce){
 document.querySelectorAll("[data-count]").forEach(el=>{const end=+el.dataset.count,o={v:0};gsap.to(o,{v:end,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"},onUpdate(){el.textContent=el.hasAttribute("data-plain")?Math.round(o.v):Math.round(o.v).toLocaleString("en-IN")}})});
 gsap.from(".extras li",{y:16,opacity:0,stagger:.05,duration:.5,scrollTrigger:{trigger:".extras",start:"top 90%"}});
 const track=document.getElementById("track");
-gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
+window.__hz=gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
 gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
 gsap.fromTo(".book .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".book",start:"top bottom",end:"bottom bottom",scrub:true}});
+
+const prog=document.getElementById("prog");
+if(prog) gsap.to(prog,{scaleX:1,ease:"none",scrollTrigger:{start:0,end:"max",scrub:0.3}});
+const split=el=>{if(!el||el.dataset.split)return[];el.dataset.split=1;const words=el.textContent.trim().split(/\s+/);el.textContent="";
+  return words.map((w,k)=>{const o=document.createElement("span");o.className="sw";const i=document.createElement("i");i.textContent=w;o.appendChild(i);el.appendChild(o);if(k<words.length-1)el.appendChild(document.createTextNode(" "));return i;});};
+if(shotAt===undefined){
+  const h1=split(document.querySelector("#intro h1"));
+  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:.25});
+  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:.55});
+  document.querySelectorAll(".band h2, .tour .head h2, .bk h2").forEach(h=>{const ws=split(h);
+    gsap.from(ws,{yPercent:115,duration:.9,ease:"power4.out",stagger:.05,scrollTrigger:{trigger:h,start:"top 88%"}});});
+  document.querySelectorAll(".band .lead, .band .kicker, .bk .lead, .faq details").forEach(el=>
+    gsap.from(el,{y:24,opacity:0,duration:.7,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 92%"}}));
+  gsap.from(".stat",{y:40,opacity:0,duration:.8,ease:"power3.out",stagger:.12,scrollTrigger:{trigger:".stats",start:"top 88%"}});
+  if(window.__hz) gsap.utils.toArray(".card").forEach(c=>gsap.fromTo(c,{rotate:3,y:50,opacity:.4},{rotate:0,y:0,opacity:1,ease:"none",
+    scrollTrigger:{trigger:c,containerAnimation:window.__hz,start:"left 95%",end:"left 45%",scrub:true}}));
+  const mq=document.querySelector(".mq");
+  if(mq){let skew=gsap.quickTo(mq,"skewX",{duration:.4,ease:"power3"});
+    ScrollTrigger.create({onUpdate:s=>skew(gsap.utils.clamp(-8,8,s.getVelocity()/-300))});}
+  if(typeof Lenis!=="undefined" && matchMedia("(pointer:fine)").matches){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const el=document.querySelector(a.getAttribute("href"));if(el){e.preventDefault();lenis.scrollTo(el,{offset:-10});}}));}
+}
+
 }
 })();
 </script>

@@ -166,8 +166,25 @@ body{background:var(--paper);color:var(--ink)}
 .faq details[open] summary::after{content:"\2212"}
 .faq details p{margin:10px 0 0;color:var(--muted);max-width:70ch}
 footer{background:var(--tint2);color:var(--muted)}
+
+/* ---- motion layer v2 ---- */
+#prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent-dark);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}.sw>i{display:inline-block;font-style:inherit}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out infinite 1.2s;z-index:-1;pointer-events:none}
+.btn.ghost::after{background:linear-gradient(100deg,transparent,color-mix(in srgb,var(--accent-dark) 22%,transparent),transparent)}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.marquee{overflow:hidden;background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,3vh,30px) 0}
+.mq{display:flex;width:max-content;animation:mq 38s linear infinite;will-change:transform}
+.mq span{font:400 clamp(1.8rem,4.6vw,3.4rem)/1.1 var(--display);color:var(--accent-dark);white-space:nowrap;padding-right:.9em}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--accent-dark)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.card:hover{transform:translateY(-8px)}.card:hover img{transform:scale(1.04)!important}}
+@media (prefers-reduced-motion:reduce){.mq,.btn::after{animation:none}}
 </style>
 </head><body>
+<div id="prog"></div>
 <div class="concept">Concept redesign for Alchemy · not the official website</div>
 <nav class="nav"><a class="brand" href="#walk"><img src="img/logo.png" alt=""><span>Alchemy</span></a><a class="btn" href="tel:+919600088255">Call to book</a></nav>
 
@@ -191,6 +208,7 @@ footer{background:var(--tint2);color:var(--muted)}
   <div class="stats"><div class="stat"><b data-count="11">11</b><span>massage styles on the menu</span></div><div class="stat"><b data-count="3">3</b><span>areas of care: hair &amp; scalp, body, skin</span></div></div><ul class="extras"><li>Head massage</li><li>Body massage</li><li>Thai massage</li><li>Hot stone massage</li><li>Herbal compress massage</li><li>Swedish massage</li><li>Candle massage</li><li>Bamboo massage</li><li>Aroma massage</li><li>Deep tissue massage</li><li>Balinese massage</li><li>Face treatments</li><li>Body treatments</li><li>Hands &amp; feet exfoliation</li></ul></div></section>
 <section class="band story"><div class="wrap"><div class="kicker">Welcome to Alchemy</div><h2>Expert hands, custom care</h2>
 <p class="lead">A quiet place where clear skin, expert hands and custom care come together, in a clean and serene setting that rejuvenates you entirely.</p><div class="near"><div><b>Sri Towers</b><span>No. 29/30, Saptagiri Nagar</span></div><div><b>Puzhudhivakkam</b><span>Madipakkam, Chennai</span></div></div></div></section>
+<section class="marquee" aria-hidden="true"><div class="mq"><span>Head massage</span><span>Body massage</span><span>Thai massage</span><span>Hot stone massage</span><span>Herbal compress massage</span><span>Swedish massage</span><span>Candle massage</span><span>Bamboo massage</span><span>Aroma massage</span><span>Deep tissue massage</span><span>Balinese massage</span><span>Face treatments</span><span>Head massage</span><span>Body massage</span><span>Thai massage</span><span>Hot stone massage</span><span>Herbal compress massage</span><span>Swedish massage</span><span>Candle massage</span><span>Bamboo massage</span><span>Aroma massage</span><span>Deep tissue massage</span><span>Balinese massage</span><span>Face treatments</span></div></section>
 <section class="tour" id="tour"><div class="head wrap"><div class="kicker">Inside Alchemy</div><h2 style="font-size:clamp(2.2rem,5.4vw,4rem);margin-top:10px">Step away from the noise</h2></div>
 <div class="track" id="track"><figure class="card"><div class="pic"><img src="img/lounge.jpg" alt="A calm corridor" loading="lazy"></div><figcaption><h3>A calm corridor</h3><p>Soft seating and plants on the way to your room.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/room.jpg" alt="Your treatment room" loading="lazy"></div><figcaption><h3>Your treatment room</h3><p>Fresh towels and a wooden massage table.</p></figcaption></figure><figure class="card"><div class="pic"><img src="img/salon.jpg" alt="The salon" loading="lazy"></div><figcaption><h3>The salon</h3><p>Styling chair and wash station, in natural light.</p></figcaption></figure></div></section>
 <section class="band faq" id="faq"><div class="wrap"><div class="kicker">Questions families ask</div><h2>Good to know</h2><details><summary>Where is Alchemy Salon &amp; Spa?</summary><p>No. 29/30, Sri Towers, Saptagiri Nagar, Puzhudhivakkam, Madipakkam, Chennai.</p></details><details><summary>What facilities does Alchemy Salon &amp; Spa have?</summary><p>Head massage, Body massage, Thai massage, Hot stone massage, Herbal compress massage, Swedish massage, Candle massage, Bamboo massage, Aroma massage, Deep tissue massage, Balinese massage, Face treatments, Body treatments, Hands &amp; feet exfoliation.</p></details><details><summary>Are massages for men and women?</summary><p>Yes. Alchemy offers head and body massages for both men and women.</p></details><details><summary>How do I book an appointment at Alchemy Salon &amp; Spa?</summary><p>Pick your date in the booking section of this page and send it on WhatsApp, or call +91 96000 88255.</p></details></div></section>
@@ -203,6 +221,7 @@ footer{background:var(--tint2);color:var(--muted)}
 <footer>Concept redesign prepared for Alchemy by Janani Porkodi. All photos and details are from alchemyspa.in.</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="919600088255", NAME="Alchemy", WAQ="can I book an appointment on {date}?";
@@ -229,15 +248,15 @@ tl.fromTo("#art",{scale:1.04},{scale:1.5,duration:2.2,ease:"power1.in"},0.2);
 tl.to("#artcap",{opacity:1,duration:.4},0.5).to("#artcap",{opacity:0,duration:.3},1.5);
 tl.to("#artshade",{opacity:0,duration:.6},0.4);
 tl.to("#artveil",{opacity:1,duration:.8},1.6);
-tl.fromTo("#pc0",{opacity:0,y:80,scale:.86,rotate:2},{opacity:1,y:0,scale:1,rotate:0,duration:.8,ease:"power2.out"},1.8);
+tl.fromTo("#pc0",{opacity:0,y:90,scale:.82,rotate:3,rotationY:18,transformPerspective:900},{opacity:1,y:0,scale:1,rotate:0,rotationY:0,duration:.85,ease:"back.out(1.4)"},1.8);
 tl.to("#pcap0",{opacity:1,duration:.35},2.2);
 tl.to("#pcap0",{opacity:0,duration:.3},3.1);
 tl.to("#pc0",{opacity:0,y:-60,scale:.94,duration:.6},3.1);
-tl.fromTo("#pc1",{opacity:0,y:80,scale:.86,rotate:-2},{opacity:1,y:0,scale:1,rotate:0,duration:.8,ease:"power2.out"},3.3);
+tl.fromTo("#pc1",{opacity:0,y:90,scale:.82,rotate:-3,rotationY:-18,transformPerspective:900},{opacity:1,y:0,scale:1,rotate:0,rotationY:0,duration:.85,ease:"back.out(1.4)"},3.3);
 tl.to("#pcap1",{opacity:1,duration:.35},3.6999999999999997);
 tl.to("#pcap1",{opacity:0,duration:.3},4.6);
 tl.to("#pc1",{opacity:0,y:-60,scale:.94,duration:.6},4.6);
-tl.fromTo("#pc2",{opacity:0,y:80,scale:.86,rotate:2},{opacity:1,y:0,scale:1,rotate:0,duration:.8,ease:"power2.out"},4.8);
+tl.fromTo("#pc2",{opacity:0,y:90,scale:.82,rotate:3,rotationY:18,transformPerspective:900},{opacity:1,y:0,scale:1,rotate:0,rotationY:0,duration:.85,ease:"back.out(1.4)"},4.8);
 tl.to("#pcap2",{opacity:1,duration:.35},5.2);
 tl.to({},{duration:.5},6.3);
 if(reduce) tl.progress(1); else if(shotAt!==undefined) tl.progress(shotAt);
@@ -246,9 +265,34 @@ if(!reduce){
 document.querySelectorAll("[data-count]").forEach(el=>{const end=+el.dataset.count,o={v:0};gsap.to(o,{v:end,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"},onUpdate(){el.textContent=el.hasAttribute("data-plain")?Math.round(o.v):Math.round(o.v).toLocaleString("en-IN")}})});
 gsap.from(".extras li",{y:16,opacity:0,stagger:.05,duration:.5,scrollTrigger:{trigger:".extras",start:"top 90%"}});
 const track=document.getElementById("track");
-gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
+window.__hz=gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
 gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
 gsap.fromTo(".book .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".book",start:"top bottom",end:"bottom bottom",scrub:true}});
+
+const prog=document.getElementById("prog");
+if(prog) gsap.to(prog,{scaleX:1,ease:"none",scrollTrigger:{start:0,end:"max",scrub:0.3}});
+const split=el=>{if(!el||el.dataset.split)return[];el.dataset.split=1;const words=el.textContent.trim().split(/\s+/);el.textContent="";
+  return words.map((w,k)=>{const o=document.createElement("span");o.className="sw";const i=document.createElement("i");i.textContent=w;o.appendChild(i);el.appendChild(o);if(k<words.length-1)el.appendChild(document.createTextNode(" "));return i;});};
+if(shotAt===undefined){
+  const h1=split(document.querySelector("#intro h1"));
+  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:.25});
+  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:.55});
+  document.querySelectorAll(".band h2, .tour .head h2, .bk h2").forEach(h=>{const ws=split(h);
+    gsap.from(ws,{yPercent:115,duration:.9,ease:"power4.out",stagger:.05,scrollTrigger:{trigger:h,start:"top 88%"}});});
+  document.querySelectorAll(".band .lead, .band .kicker, .bk .lead, .faq details").forEach(el=>
+    gsap.from(el,{y:24,opacity:0,duration:.7,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 92%"}}));
+  gsap.from(".stat",{y:40,opacity:0,duration:.8,ease:"power3.out",stagger:.12,scrollTrigger:{trigger:".stats",start:"top 88%"}});
+  if(window.__hz) gsap.utils.toArray(".card").forEach(c=>gsap.fromTo(c,{rotate:3,y:50,opacity:.4},{rotate:0,y:0,opacity:1,ease:"none",
+    scrollTrigger:{trigger:c,containerAnimation:window.__hz,start:"left 95%",end:"left 45%",scrub:true}}));
+  const mq=document.querySelector(".mq");
+  if(mq){let skew=gsap.quickTo(mq,"skewX",{duration:.4,ease:"power3"});
+    ScrollTrigger.create({onUpdate:s=>skew(gsap.utils.clamp(-8,8,s.getVelocity()/-300))});}
+  if(typeof Lenis!=="undefined" && matchMedia("(pointer:fine)").matches){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    lenis.on("scroll",ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const el=document.querySelector(a.getAttribute("href"));if(el){e.preventDefault();lenis.scrollTo(el,{offset:-10});}}));}
+}
+
 }
 })();
 </script>
