@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>JG Hall · Kalyana Mandapam, Madipakkam</title>
+<meta name="description" content="JG Hall, a fully air-conditioned kalyana mandapam in Madipakkam, Chennai. 600 guests, 7 A/C rooms, 10 minutes from Chennai Airport.">
+<meta property="og:title" content="JG Hall · Kalyana Mandapam, Madipakkam">
+<meta property="og:description" content="Step inside: 600 guests, 7 A/C rooms, 10 minutes from Chennai Airport.">
+<meta property="og:image" content="img/ban5.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;600&family=Noto+Serif+Tamil:wght@500&display=swap">
+<style>
+:root{
+  --kumkum:#7a1424; --kumkum-deep:#4a0b16; --turmeric:#e7a520; --marigold:#f08a12;
+  --jasmine:#fbf7ef; --leaf:#2f6b3a; --teak:#6b3a1c; --teak-dark:#3d1f0d; --ink:#22140f;
+  --display:"Marcellus", "Times New Roman", serif;
+  --body:"Mukta", system-ui, sans-serif;
+  --tamil:"Noto Serif Tamil", serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--kumkum-deep);color:var(--jasmine);font:400 18px/1.6 var(--body);overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.1;text-wrap:balance}
+a{color:inherit}
+.concept{position:fixed;left:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:50;
+  background:rgba(20,8,6,.78);backdrop-filter:blur(6px);color:#f3e6cf;font-size:12.5px;padding:6px 14px;border-radius:99px;white-space:nowrap;letter-spacing:.02em}
+.nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:14px max(18px,env(safe-area-inset-left)) 14px max(18px,env(safe-area-inset-right));pointer-events:none}
+.nav > *{pointer-events:auto}
+.nav .brand{display:flex;align-items:center;gap:10px;background:rgba(251,247,239,.92);color:var(--kumkum);padding:6px 14px 6px 6px;border-radius:99px;text-decoration:none;font-family:var(--display);font-size:18px}
+.nav .brand img{width:34px;height:34px;object-fit:contain;border-radius:50%;background:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--turmeric);color:var(--ink);font:600 15px var(--body);
+  padding:10px 18px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.btn.ghost{background:transparent;color:var(--jasmine);border:1.5px solid rgba(251,247,239,.6);box-shadow:none}
+.btn:focus-visible{outline:3px solid var(--jasmine);outline-offset:3px}
+
+/* HERO */
+.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end}
+.hero .bg{position:absolute;inset:0;background:url(img/ban5.jpg) 70% 40%/cover}
+.hero::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(30,6,12,.88) 0%,rgba(30,6,12,.55) 38%,rgba(30,6,12,0) 62%),
+  linear-gradient(180deg,rgba(20,6,10,.35) 0%,rgba(20,6,10,0) 30%,rgba(40,8,16,.6) 82%,var(--kumkum-deep) 100%)}
+@media (max-width:700px){.hero .bg{background-position:62% 30%}.hero::after{background:linear-gradient(180deg,rgba(20,6,10,.3) 0%,rgba(20,6,10,0) 25%,rgba(40,8,16,.9) 62%,var(--kumkum-deep) 100%)}}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.hero .copy{position:relative;z-index:2;padding:0 max(22px,6vw) 12vh;max-width:900px}
+.eyebrow{font:600 13px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--turmeric)}
+.hero h1{font-size:clamp(3.4rem,11vw,8.5rem);letter-spacing:.01em;margin-top:10px}
+.hero p{font-size:clamp(1.05rem,2.2vw,1.35rem);max-width:34ch;color:#f3e6cf;margin:12px 0 26px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.scrollhint{position:absolute;z-index:2;right:max(22px,6vw);bottom:12vh;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#f3e6cf;writing-mode:vertical-rl}
+.scrollhint::after{content:"";display:block;width:1px;height:60px;background:currentColor;margin:12px auto 0;animation:drip 2s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* WALK-IN SCENE */
+.walk{position:relative;height:100svh;overflow:hidden;background:#120507;perspective:1200px}
+.layer{position:absolute;inset:0;perspective:1100px;overflow:hidden}
+.shade{position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg,rgba(20,5,8,0),rgba(20,5,8,.75));pointer-events:none;z-index:4;opacity:0}
+.photo{position:absolute;inset:-2%;background-size:cover;background-position:center;will-change:transform}
+.hall{background-image:url(img/ban2.jpg)}
+.stagephoto{background-image:url(img/ban6.jpg);opacity:0}
+.warm{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(255,170,70,.28),rgba(120,30,20,.45) 75%);mix-blend-mode:soft-light;opacity:0}
+.decor{position:absolute;inset:0;pointer-events:none}
+.garlands{position:absolute;left:0;right:0;top:0;width:100%;height:52%;transform:translateY(-105%)}
+.lamp{position:absolute;bottom:4%;width:clamp(56px,9vw,110px);opacity:0;transform:translateY(40px)}
+.lamp.l{left:6%}.lamp.r{right:6%}
+.lamp .glow{position:absolute;left:50%;top:-6%;width:260%;aspect-ratio:1;transform:translate(-50%,-40%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,190,80,.55),rgba(255,140,30,0) 65%);animation:flick 2.4s ease-in-out infinite}
+.lamp .flame{transform-origin:50% 100%;animation:flame 1.2s ease-in-out infinite}
+@keyframes flame{0%,100%{transform:scale(1,1)}50%{transform:scale(.88,1.08)}}
+@keyframes flick{0%,100%{opacity:.85}50%{opacity:1}}
+#petals{position:absolute;inset:0;width:100%;height:100%}
+
+.doorway{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4vh;will-change:transform,opacity;
+  background:
+   radial-gradient(circle at 50% 50%,rgba(255,255,255,.07) 2px,transparent 3px) 0 0/28px 28px,
+   radial-gradient(ellipse at 50% 120%,#8d1a2e,#5a0e1b 60%,#3a0811);}
+.frame{position:relative;height:72%;aspect-ratio:0.72;max-width:88vw;border-radius:46% 46% 0 0/22% 22% 0 0;
+  padding:clamp(14px,2.2vh,26px);background:
+   repeating-linear-gradient(90deg,#c48a2c 0 6px,#8e5a17 6px 8px,#d9a443 8px 14px),#b47b22;
+  box-shadow:0 0 0 6px #5c3410, 0 30px 80px rgba(0,0,0,.6)}
+.lintel{position:absolute;left:50%;top:-1.2em;transform:translateX(-50%);background:var(--kumkum);color:var(--turmeric);
+  font-family:var(--tamil);font-size:clamp(16px,2.6vh,24px);padding:4px 20px;border-radius:6px;border:2px solid #d9a443;white-space:nowrap;z-index:3}
+.opening{position:relative;width:100%;height:100%;border-radius:44% 44% 0 0/20% 20% 0 0;overflow:hidden;perspective:1400px;background:#2a1408 url(img/ban2.jpg) center/cover no-repeat}
+.opening .light{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(255,240,200,.9),rgba(255,200,110,.35) 55%,rgba(255,170,60,0) 100%);opacity:0;mix-blend-mode:screen}
+.door{position:absolute;top:0;bottom:0;width:50%;transform-style:preserve-3d;will-change:transform;
+  background:linear-gradient(90deg,var(--teak-dark),var(--teak) 18%,#7d4622 50%,var(--teak) 82%,var(--teak-dark));
+  display:grid;grid-template-rows:1.1fr 1.6fr 1.1fr;gap:4%;padding:9% 9% 7%}
+.door.left{left:0;transform-origin:0 50%;border-right:2px solid #2a1408}
+.door.right{right:0;transform-origin:100% 50%;border-left:2px solid #2a1408}
+.panel{border-radius:4px;box-shadow:inset 0 0 0 3px #4a250f,inset 0 0 0 6px #8a5228,inset 0 0 0 9px #4a250f;
+  background:radial-gradient(circle,#e6b34a 0 2.5px,#7a3f15 3px 4px,transparent 4.5px) 50% 50%/22px 22px,linear-gradient(180deg,#71401d,#5d3214)}
+.door.left .knob,.door.right .knob{position:absolute;top:52%;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff0b0,#d39a2a 50%,#7a4a10)}
+.door.left .knob{right:8px}.door.right .knob{left:8px}
+.thoranam{position:absolute;left:-6%;right:-6%;top:-2%;height:20%;z-index:2;pointer-events:none}
+
+.caption{position:absolute;left:0;right:0;bottom:12%;text-align:center;padding:0 22px;opacity:0;z-index:5}
+.caption h2{font-size:clamp(1.8rem,4.6vw,3.4rem);text-shadow:0 2px 24px rgba(0,0,0,.65)}
+.caption p{max-width:40ch;margin:10px auto 0;font-size:clamp(1rem,1.9vw,1.2rem);color:#fbefd9;text-shadow:0 1px 14px rgba(0,0,0,.8)}
+.caption.c0{opacity:1;bottom:auto;top:max(76px,8vh)}
+.caption.c0 h2{font-size:clamp(1.3rem,3vw,2rem)}
+
+/* SECTIONS */
+section.band{padding:clamp(70px,12vh,140px) max(22px,6vw)}
+.wrap{max-width:1180px;margin:0 auto}
+.kicker{font:600 13px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--turmeric)}
+.band h2{font-size:clamp(2.2rem,5.4vw,4rem);margin:10px 0 18px}
+.lead{font-size:1.15rem;max-width:56ch;color:#f1dfc6}
+
+.numbers{background:var(--jasmine);color:var(--ink)}
+.numbers .kicker{color:var(--kumkum)}
+.numbers .lead{color:#4d3a30}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border-top:2px solid var(--kumkum)}
+.stat{padding:26px 20px 26px 0;border-right:1px solid #e3d6c3}
+.stat:last-child{border-right:0}
+.stat b{display:block;font:400 clamp(3rem,7vw,5.4rem)/1 var(--display);color:var(--kumkum);font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:8px;font-size:1rem;color:#4d3a30}
+.extras{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;padding:0;list-style:none}
+.extras li{border:1.5px solid #d8c6ab;border-radius:99px;padding:6px 14px;font-size:.95rem;color:#4d3a30}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat{border-right:0;border-bottom:1px solid #e3d6c3;padding-left:0}}
+
+.tour{background:var(--kumkum);overflow:hidden;padding:0}
+.tour .head{padding:clamp(70px,12vh,120px) max(22px,6vw) 30px}
+.track{display:flex;gap:clamp(16px,2.4vw,32px);padding:0 max(22px,6vw) clamp(70px,12vh,120px);width:max-content}
+.card{width:min(78vw,440px);flex:none;margin:0}
+.card .pic{aspect-ratio:4/3;overflow:hidden;border-radius:10px;background:#3a0a14}
+.card img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform .8s}
+.card:hover img{transform:scale(1.0)}
+.card figcaption{margin-top:14px}
+.card h3{font-size:1.6rem;color:var(--jasmine)}
+.card p{margin:6px 0 0;color:#f1dfc6;font-size:1rem;max-width:36ch}
+
+.adithi{background:var(--jasmine);color:var(--ink)}
+.adithi .kicker{color:var(--kumkum)}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,70px);align-items:center}
+.split img{border-radius:12px;width:100%;max-width:400px;justify-self:center;aspect-ratio:2/3;object-fit:cover;box-shadow:0 24px 60px rgba(74,11,22,.25)}
+.adithi .lead{color:#4d3a30}
+.adithi .pill{display:inline-block;background:var(--kumkum);color:var(--jasmine);padding:6px 16px;border-radius:99px;font-weight:600;margin-top:6px}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+
+.night{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.night .bg{position:absolute;inset:0;background:#05030a url(img/bann.jpg) 30% center/cover}
+@media (max-width:700px){.night .bg{background-position:58% center;opacity:.55}}
+.night::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,3,10,.95) 0%,rgba(8,3,10,.75) 45%,rgba(8,3,10,.1) 80%);z-index:1}
+.night .wrap{position:relative;z-index:2;width:100%}
+.book{max-width:520px}
+.book label{display:block;font-weight:600;margin:22px 0 8px}
+.book input[type=date]{font:inherit;background:rgba(251,247,239,.1);color:var(--jasmine);border:1.5px solid rgba(251,247,239,.4);border-radius:10px;padding:12px 14px;width:100%;color-scheme:dark}
+.book .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;font-size:1rem;color:#f1dfc6}
+.contact h3{font-size:1.2rem;color:var(--turmeric);margin-bottom:6px}
+.contact p{margin:0}
+@media (max-width:640px){.contact{grid-template-columns:1fr}}
+footer{background:#14060a;color:#bba98f;font-size:.9rem;padding:34px max(22px,6vw) 80px;text-align:center}
+
+@media (prefers-reduced-motion:reduce){
+  .door.left{transform:rotateY(-100deg)}.door.right{transform:rotateY(100deg)}
+  .lamp .glow,.lamp .flame,.scrollhint::after{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="concept">Concept redesign for JG Hall · not the official website</div>
+
+<nav class="nav">
+  <a class="brand" href="#top"><img src="img/logo.png" alt="">JG Hall</a>
+  <a class="btn" href="tel:+917299415161">Call to book</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bg"></div>
+  <canvas id="twinkle"></canvas>
+  <div class="copy">
+    <div class="eyebrow">Kalyana Mandapam · Madipakkam, Chennai</div>
+    <h1>JG Hall</h1>
+    <p>A fully air-conditioned hall for 600 guests, 10 minutes from Chennai Airport.</p>
+    <div class="row">
+      <a class="btn" href="#book">Check your muhurtham date</a>
+      <a class="btn ghost" href="#walk">Step inside</a>
+    </div>
+  </div>
+  <div class="scrollhint">Scroll</div>
+</header>
+
+<section class="walk" id="walk" aria-label="Walk into the hall">
+  <div class="layer"><div class="photo hall" id="hall"></div></div>
+  <div class="layer"><div class="photo stagephoto" id="stagephoto"></div><div class="warm" id="warm"></div></div>
+  <div class="decor">
+    <svg class="garlands" id="garlands" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMin slice" aria-hidden="true"></svg>
+    <svg class="lamp l" viewBox="0 0 100 260" aria-hidden="true"><use href="#kuthu"/></svg>
+    <svg class="lamp r" viewBox="0 0 100 260" aria-hidden="true"><use href="#kuthu"/></svg>
+    <canvas id="petals"></canvas>
+  </div>
+  <div class="shade" id="shade"></div>
+
+  <div class="doorway" id="doorway">
+    <div class="frame" id="frame">
+      <div class="lintel">நல்வரவு · Welcome</div>
+      <svg class="thoranam" id="thoranam" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <div class="opening">
+        <div class="light" id="light"></div>
+        <div class="door left" id="doorL"><div class="panel"></div><div class="panel"></div><div class="panel"></div><span class="knob"></span></div>
+        <div class="door right" id="doorR"><div class="panel"></div><div class="panel"></div><div class="panel"></div><span class="knob"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption c0" id="cap0"><h2>Every wedding begins at the door</h2></div>
+  <div class="caption" id="cap1"><h2>Walk in</h2><p>A rectangular hall with the stage at the centre, so all 600 guests get a clear view.</p></div>
+  <div class="caption" id="cap2"><h2>Turn to the stage</h2><p>Air-conditioned end to end, with generator backup so the lights never drop mid-muhurtham.</p></div>
+  <div class="caption" id="cap3"><h2>Now picture it on your day</h2><p>Garlands up, lamps lit, your family filling every row.</p></div>
+</section>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="brass" x1="0" x2="1"><stop offset="0" stop-color="#8a5a12"/><stop offset=".45" stop-color="#f3cf6a"/><stop offset="1" stop-color="#9a6614"/></linearGradient>
+    <radialGradient id="halo"><stop offset="0" stop-color="#ffd27a" stop-opacity=".75"/><stop offset=".35" stop-color="#ffb347" stop-opacity=".3"/><stop offset="1" stop-color="#ff9a2a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="fl" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fff6c8"/><stop offset=".5" stop-color="#ffc23a"/><stop offset="1" stop-color="#ff7a12"/></radialGradient>
+    <symbol id="kuthu" viewBox="0 0 100 260">
+      <circle cx="50" cy="26" r="46" fill="url(#halo)"/>
+      <path class="flame" d="M50 6 C58 20 60 30 50 40 C40 30 42 20 50 6Z" fill="url(#fl)"/>
+      <path d="M50 2 l4 6 -4 4 -4 -4z" fill="url(#brass)" opacity=".0"/>
+      <ellipse cx="50" cy="46" rx="34" ry="7" fill="url(#brass)"/>
+      <path d="M22 46 Q50 66 78 46" fill="url(#brass)"/>
+      <rect x="46" y="58" width="8" height="140" fill="url(#brass)"/>
+      <ellipse cx="50" cy="90" rx="12" ry="5" fill="url(#brass)"/>
+      <ellipse cx="50" cy="140" rx="15" ry="6" fill="url(#brass)"/>
+      <path d="M50 196 C30 200 18 222 14 250 H86 C82 222 70 200 50 196Z" fill="url(#brass)"/>
+      <rect x="10" y="248" width="80" height="10" rx="3" fill="url(#brass)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<section class="band numbers" id="numbers">
+  <div class="wrap">
+    <div class="kicker">The hall in numbers</div>
+    <h2>Room for everyone you love</h2>
+    <p class="lead">Wedding, engagement, seemantham or a birthday get-together. The hall, rooms, dining and kitchen are all under one roof, on 50-foot and 30-foot roads with room for cars.</p>
+    <div class="stats">
+      <div class="stat"><b data-count="600">600</b><span>guests in the main hall</span></div>
+      <div class="stat"><b data-count="130">130</b><span>seats in the dining hall</span></div>
+      <div class="stat"><b data-count="7">7</b><span>A/C rooms, incl. bride &amp; groom rooms</span></div>
+      <div class="stat"><b data-count="200">200</b><span>two-wheelers parked inside</span></div>
+    </div>
+    <ul class="extras">
+      <li>Fully air-conditioned</li><li>Generator &amp; inverter backup</li><li>CCTV cameras</li>
+      <li>Passenger lift + service lift</li><li>Kitchen with all vessels</li><li>Lockable store room</li>
+      <li>Pillows &amp; bedsheets</li><li>13 common toilets + attached bathrooms</li>
+    </ul>
+  </div>
+</section>
+
+<section class="tour" id="tour">
+  <div class="head wrap">
+    <div class="kicker">Behind the stage</div>
+    <h2>Everything the family needs</h2>
+  </div>
+  <div class="track" id="track">
+    <figure class="card"><div class="pic"><img src="img/b14.jpg" alt="A/C room with bed and wardrobe" loading="lazy"></div><figcaption><h3>Rooms for the family</h3><p>7 air-conditioned rooms with attached bathrooms and water heaters, plus two large rooms that sleep 15 each.</p></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/b13.jpg" alt="Kitchen with burner stations and exhaust hood" loading="lazy"></div><figcaption><h3>A full kitchen</h3><p>Space for 5 burners, 2 grinders, every vessel your caterer needs, and plenty of shelving.</p></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/ban4.jpg" alt="Hall with polished granite floor and large windows" loading="lazy"></div><figcaption><h3>Bright, polished halls</h3><p>Big windows and granite floors, so the hall stays bright for a morning muhurtham.</p></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/b11.jpg" alt="Lift lobby" loading="lazy"></div><figcaption><h3>Lifts for elders</h3><p>A passenger lift for guests, and a separate service lift for the caterers.</p></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/shrine.jpg" alt="Colourful shrine with Vinayagar on top" loading="lazy"></div><figcaption><h3>Blessings first</h3><p>The hall's own shrine, for prayers before the ceremony begins.</p></figcaption></figure>
+    <figure class="card"><div class="pic"><img src="img/ban3.jpg" alt="JG Hall building by day" loading="lazy"></div><figcaption><h3>Easy to reach</h3><p>10 minutes from Chennai Airport, with good connections to the Metro.</p></figcaption></figure>
+  </div>
+</section>
+
+<section class="band adithi" id="adithi">
+  <div class="wrap split">
+    <div>
+      <div class="kicker">For smaller functions</div>
+      <h2>Adithi Mini Hall</h2>
+      <p class="lead">Same family, smaller gathering. A fully air-conditioned hall with a dining hall, a passenger lift and two rooms on each floor. Ideal for engagements, seemantham and birthdays.</p>
+      <span class="pill">125–150 guests</span>
+      <p style="margin-top:18px;color:#4d3a30">Plot No. 2, First Main Road, Kannan Nagar, Madipakkam</p>
+    </div>
+    <img src="img/adithi.jpg" alt="Adithi Hall entrance" loading="lazy">
+  </div>
+</section>
+
+<section class="night" id="book">
+  <div class="bg"></div>
+  <div class="wrap" style="padding:clamp(70px,12vh,140px) max(22px,6vw)">
+    <div class="book">
+      <div class="kicker">Book JG Hall</div>
+      <h2 style="font-size:clamp(2.4rem,6vw,4.4rem);margin:10px 0 12px">See you on the big day</h2>
+      <p class="lead">Pick your muhurtham date and send it to us on WhatsApp. Ask if the hall is free, in one tap.</p>
+      <form id="dateform">
+        <label for="mdate">Your date</label>
+        <input type="date" id="mdate" required>
+        <div class="row">
+          <button class="btn" type="submit">Ask on WhatsApp</button>
+          <a class="btn ghost" href="tel:+917299415161">Call +91 72994 15161</a>
+        </div>
+      </form>
+      <div class="contact">
+        <div><h3>JG Hall</h3><p>No. 169/170, 3rd Main Road, Raghava Nagar, Madipakkam, Chennai 600 091</p><p>+91 72994 15161 · 99417 43332</p></div>
+        <div><h3>Adithi Mini Hall</h3><p>Plot No. 2, First Main Road, Kannan Nagar, Madipakkam, Chennai 600 091</p><p>+91 98410 43410 · 99417 43332</p></div>
+      </div>
+      <p style="margin-top:22px;color:#f1dfc6">jghall2015@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<footer>Concept redesign prepared for JG Hall by Janani Porkodi. All photos and details are from jgkalyanamandapam.com.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+const NS="http://www.w3.org/2000/svg";
+const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* thoranam over the door: mango leaves + marigolds on a rope */
+(function(){
+  const s=document.getElementById("thoranam");
+  const rope=document.createElementNS(NS,"path");
+  rope.setAttribute("d","M0 14 Q300 34 600 14");rope.setAttribute("stroke","#6b4a1a");rope.setAttribute("stroke-width","3");rope.setAttribute("fill","none");
+  s.appendChild(rope);
+  const n=17;
+  for(let i=0;i<n;i++){
+    const x=18+i*(564/(n-1)), t=x/600, y=14+40*t*(1-t);
+    const g=document.createElementNS(NS,"g");
+    g.setAttribute("transform",`translate(${x} ${y})`);
+    if(i%2===0){
+      const leaf=document.createElementNS(NS,"path");
+      leaf.setAttribute("d","M0 0 C14 22 10 58 0 84 C-10 58 -14 22 0 0Z");
+      leaf.setAttribute("fill",i%4===0?"#2f6b3a":"#3f8a49");
+      const vein=document.createElementNS(NS,"path");vein.setAttribute("d","M0 4 L0 78");vein.setAttribute("stroke","#1d4a26");vein.setAttribute("stroke-width","1.4");
+      g.appendChild(leaf);g.appendChild(vein);
+    }else{
+      for(let k=0;k<3;k++){const c=document.createElementNS(NS,"circle");c.setAttribute("cx",0);c.setAttribute("cy",10+k*15);c.setAttribute("r",8);c.setAttribute("fill",k===1?"#f3b51a":"#f08a12");g.appendChild(c);}
+    }
+    g.style.transformBox="fill-box";
+    s.appendChild(g);
+  }
+})();
+
+/* stage garlands: two rows of draped marigold swags + hanging strands */
+(function(){
+  const s=document.getElementById("garlands");
+  const W=1200, colors=["#f08a12","#f6b41c","#e8650c","#ffcf3a"];
+  function bead(x,y,r,f){const c=document.createElementNS(NS,"circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r",r);c.setAttribute("fill",f);s.appendChild(c);}
+  function swags(n,top,depth,r,phase){
+    for(let d=0;d<n;d++){const x0=(d+phase)*W/n, x1=(d+1+phase)*W/n;
+      for(let k=0;k<=30;k++){const t=k/30,x=x0+(x1-x0)*t,y=top+depth*Math.sin(Math.PI*t);bead(x,y,r,k%7===3?"#fff6e6":colors[(k+d)%4]);}}
+  }
+  for(let d=0;d<=8;d++){const x=d*W/8;
+    for(let k=0;k<18;k++) bead(x,24+k*19,k===17?13:9,k%6===5?"#fff6e6":colors[k%4]);
+    const leaf=document.createElementNS(NS,"path");leaf.setAttribute("d",`M${x} 360 c11 16 9 38 0 56 c-9 -18 -11 -40 0 -56z`);leaf.setAttribute("fill","#2f6b3a");s.appendChild(leaf);}
+  swags(8,26,70,10,0);
+  swags(8,20,120,12,-0.5);
+  const top=document.createElementNS(NS,"rect");top.setAttribute("x",0);top.setAttribute("y",0);top.setAttribute("width",W);top.setAttribute("height",18);top.setAttribute("fill","#2f6b3a");s.appendChild(top);
+  for(let x=10;x<W;x+=26){const l=document.createElementNS(NS,"path");l.setAttribute("d",`M${x} 12 c8 10 6 26 0 38 c-6 -12 -8 -28 0 -38z`);l.setAttribute("fill",x%52<26?"#2f6b3a":"#3f8a49");s.appendChild(l);}
+})();
+
+/* hero twinkle: soft fairy-light sparkles over the lit building */
+(function(){
+  const c=document.getElementById("twinkle"), x=c.getContext("2d"); let w,h,dots=[];
+  function size(){w=c.width=c.offsetWidth*devicePixelRatio;h=c.height=c.offsetHeight*devicePixelRatio;
+    dots=Array.from({length:70},()=>({x:Math.random()*w,y:Math.random()*h*.7,r:(Math.random()*1.6+.6)*devicePixelRatio,p:Math.random()*6.28,s:.6+Math.random()*1.6}))}
+  size();addEventListener("resize",size);
+  if(reduce) return;
+  (function f(t){x.clearRect(0,0,w,h);for(const d of dots){const a=.25+.75*Math.max(0,Math.sin(d.p+t/1000*d.s));
+    x.beginPath();x.fillStyle=`rgba(255,214,140,${a*.8})`;x.arc(d.x,d.y,d.r,0,6.28);x.fill();}requestAnimationFrame(f)})(0);
+})();
+
+/* falling petals for the stage moment */
+const petals=(function(){
+  const c=document.getElementById("petals"), x=c.getContext("2d"); let w,h,ps=[],on=0;
+  function size(){w=c.width=c.offsetWidth*devicePixelRatio;h=c.height=c.offsetHeight*devicePixelRatio}
+  size();addEventListener("resize",size);
+  function spawn(){return{x:Math.random()*w,y:-20-Math.random()*h,r:(5+Math.random()*6)*devicePixelRatio,vy:(.8+Math.random()*1.4)*devicePixelRatio,sw:Math.random()*6.28,c:["#f08a12","#f6b41c","#e8650c","#fff3dc"][Math.random()*4|0]}}
+  ps=Array.from({length:110},()=>Object.assign(spawn(),{y:Math.random()*h}));
+  function f(){x.clearRect(0,0,w,h);if(on>0){x.globalAlpha=on;for(const p of ps){p.y+=p.vy;p.sw+=.03;p.x+=Math.sin(p.sw)*.8;
+    if(p.y>h+20)Object.assign(p,spawn(),{y:-20});x.beginPath();x.fillStyle=p.c;x.ellipse(p.x,p.y,p.r,p.r*.6,p.sw,0,6.28);x.fill();}}requestAnimationFrame(f)}
+  if(!reduce) f();
+  return{set(v){on=v}};
+})();
+
+/* booking: send date to WhatsApp */
+document.getElementById("dateform").addEventListener("submit",e=>{
+  e.preventDefault();
+  const d=document.getElementById("mdate").value; if(!d) return;
+  const nice=new Date(d+"T00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"});
+  const msg=`Hello JG Hall, is the hall available on ${nice}?`;
+  window.open("https://wa.me/917299415161?text="+encodeURIComponent(msg),"_blank");
+});
+
+if(reduce){
+  gsap.set("#doorway",{opacity:0});gsap.set("#stagephoto",{opacity:1});gsap.set("#garlands",{y:0});gsap.set(".lamp",{opacity:1,y:0});
+  gsap.set("#cap3",{opacity:1});gsap.set("#cap0",{opacity:0});
+  return;
+}
+
+gsap.registerPlugin(ScrollTrigger);
+function alignOpening(){
+  const o=document.querySelector(".opening"), w=document.getElementById("walk");
+  const r=o.getBoundingClientRect(), wr=w.getBoundingClientRect();
+  const W=wr.width*1.04*1.25, H=wr.height*1.04*1.25, img=1800/1350;
+  let bw=W,bh=W/img; if(bh<H){bh=H;bw=H*img}
+  const cx=wr.left+wr.width/2, cy=wr.top+wr.height/2;
+  o.style.backgroundSize=bw+"px "+bh+"px";
+  o.style.backgroundPosition=(cx-bw/2-r.left)+"px "+(cy-bh/2-r.top)+"px";
+}
+ScrollTrigger.addEventListener("refresh",alignOpening);alignOpening();
+
+/* THE WALK-IN */
+/* email screenshot mode: ?shot=doors|open|hall|stage shows that moment without scrolling */
+const shotAt={doors:0.02,open:0.2,hall:0.42,stage:0.995}[new URLSearchParams(location.search).get("shot")];
+if(shotAt!==undefined){document.querySelector(".hero").style.display="none";document.querySelector(".concept").style.display="none";}
+const tl=gsap.timeline({defaults:{ease:"none"},paused:shotAt!==undefined,scrollTrigger:shotAt!==undefined?undefined:{trigger:"#walk",start:"top top",end:"+=420%",scrub:0.8,pin:true,anticipatePin:1}});
+tl.to("#cap0",{opacity:0,y:-20,duration:.4},0.2)
+  .to("#light",{opacity:1,duration:.5},0.3)
+  .to("#doorL",{rotateY:-112,duration:1.4,ease:"power1.inOut"},0.3)
+  .to("#doorR",{rotateY:112,duration:1.4,ease:"power1.inOut"},0.3)
+  .to("#light",{opacity:0,duration:.6},1.2)
+  .fromTo("#hall",{scale:1.25},{scale:1,duration:1.4},1.2)
+  .to("#doorway",{scale:4,duration:1.2,ease:"power2.in"},1.4)
+  .to("#doorway",{opacity:0,duration:.6},1.8)
+  .to("#shade",{opacity:1,duration:.4},2.4)
+  .to("#cap1",{opacity:1,duration:.4},2.6)
+  .to("#hall",{scale:1.55,duration:1.6},2.6)
+  .to("#cap1",{opacity:0,duration:.3},3.9)
+  /* turn to the stage */
+  .to("#hall",{rotateY:38,xPercent:-30,opacity:0,duration:1.2,ease:"power1.in"},4.1)
+  .fromTo("#stagephoto",{rotateY:-38,xPercent:30,opacity:0,scale:1.25},{rotateY:0,xPercent:0,opacity:1,scale:1.05,duration:1.2,ease:"power1.out"},4.2)
+  .to("#cap2",{opacity:1,duration:.4},5.3)
+  .to("#cap2",{opacity:0,duration:.3},6.1)
+  /* dress it up */
+  .to("#warm",{opacity:1,duration:.6},6.2)
+  .to("#garlands",{y:0,duration:1,ease:"bounce.out"},6.3)
+  .to(".lamp",{opacity:1,y:0,duration:.6,stagger:.15},6.6)
+  .to({},{duration:.8,onUpdate(){petals.set(Math.min(1,this.progress()*1.4))}},6.8)
+  .to("#cap3",{opacity:1,duration:.4},7.1)
+  .to("#stagephoto",{scale:1,duration:1},6.3)
+  .to({},{duration:.8},7.6);
+if(shotAt!==undefined){tl.progress(shotAt);petals.set(shotAt>0.9?1:0);}
+else ScrollTrigger.create({trigger:"#walk",start:"top top",end:"+=420%",onLeave:()=>petals.set(0),onEnterBack:()=>petals.set(1),onLeaveBack:()=>petals.set(0)});
+
+/* hero parallax */
+gsap.to(".hero .bg",{yPercent:18,scale:1.08,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+gsap.from(".hero .copy > *",{y:24,opacity:0,duration:.7,stagger:.08,ease:"power3.out"});
+
+/* counters */
+document.querySelectorAll("[data-count]").forEach(el=>{
+  const end=+el.dataset.count, o={v:0};
+  gsap.to(o,{v:end,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 85%"},onUpdate(){el.textContent=Math.round(o.v)}});
+});
+gsap.from(".extras li",{y:16,opacity:0,stagger:.05,duration:.5,scrollTrigger:{trigger:".extras",start:"top 90%"}});
+
+/* horizontal tour */
+const track=document.getElementById("track");
+gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",
+  scrollTrigger:{trigger:"#tour",start:"top top",end:()=>"+="+(track.scrollWidth-innerWidth),pin:true,scrub:0.6,invalidateOnRefresh:true}});
+gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
+
+/* adithi + night */
+gsap.from(".adithi img",{y:60,rotate:-2,opacity:0,duration:1.1,ease:"power3.out",scrollTrigger:{trigger:".adithi",start:"top 75%",toggleActions:"play none none none"}});
+gsap.fromTo(".night .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".night",start:"top bottom",end:"bottom bottom",scrub:true}});
+})();
+</script>
+</body>
+</html>
