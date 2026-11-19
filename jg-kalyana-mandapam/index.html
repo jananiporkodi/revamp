@@ -388,5 +388,6 @@ gsap.from(".adithi img",{y:60,rotate:-2,opacity:0,duration:1.1,ease:"power3.out"
 gsap.fromTo(".night .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".night",start:"top bottom",end:"bottom bottom",scrub:true}});
 })();
 </script>
+<script>(function(){try{var q=new URLSearchParams(location.search);if(q.has("shot"))return;if(q.has("me"))localStorage.setItem("rv_me","1");if(localStorage.getItem("rv_me")==="1")return;}catch(e){}var src=((new URLSearchParams(location.search).get("src")||"direct").toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,20))||"direct";var t=function(k){try{fetch("https://qldlfkqvjjnuthaxnsei.supabase.co/functions/v1/rv?s=jg-kalyana-mandapam&k="+k+"&src="+src,{mode:"no-cors",keepalive:true})}catch(e){}};var s={};var o=function(k){if(!s[k]){s[k]=1;t(k)}};o("view");addEventListener("scroll",function(){var h=document.documentElement,p=(scrollY+innerHeight)/h.scrollHeight;if(p>.5)o("scroll50");if(p>.97)o("scrollend")},{passive:true});document.addEventListener("click",function(e){var a=e.target.closest("a,button");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("tel:")==0)t("call");else if(h.indexOf("wa.me")>-1)t("whatsapp");else if(a.classList.contains("btn"))t("cta")},true)})();</script>
 </body>
 </html>

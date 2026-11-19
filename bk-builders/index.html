@@ -182,9 +182,29 @@ footer{background:var(--tint2);color:var(--muted)}
 .card{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 @media (hover:hover){.card:hover{transform:translateY(-8px)}.card:hover img{transform:scale(1.04)!important}}
 @media (prefers-reduced-motion:reduce){.mq,.btn::after{animation:none}}
+
+/* ---- opening moment v3 ---- */
+#hello{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 40%,color-mix(in srgb,var(--accent-dark) 78%,#fff),var(--accent-dark));color:#fff;text-align:center;padding:24px}
+#hello[hidden]{display:none}
+#hello .chip{display:inline-grid;place-items:center;width:92px;height:92px;border-radius:24px;background:#fff;box-shadow:0 14px 40px rgba(0,0,0,.25);margin:0 auto 22px}
+#hello .chip img{max-width:72px;max-height:72px;object-fit:contain}
+#hello .hk{font:600 13px var(--body);letter-spacing:.28em;text-transform:uppercase;opacity:.85}
+#hello .hn{font:400 clamp(2.4rem,9vw,5.6rem)/1.02 var(--display);margin:10px 0 0;color:#fff;text-wrap:balance}
+#hello .hn span{display:inline-block}
+#hello .hs{margin-top:16px;font-size:15px;opacity:.8}
+.wf#wf0,.art{animation:drift 11s ease-in-out infinite alternate}
+@keyframes drift{from{background-position:42% 48%}to{background-position:58% 54%}}
+.hint{position:relative}
+.hint::after{content:"";display:inline-block;width:10px;height:10px;margin-left:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-3px);animation:cue 1.4s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:rotate(45deg) translate(-2px,-4px);opacity:.5}50%{transform:rotate(45deg) translate(2px,0);opacity:1}}
+.intro{overflow:hidden}
+.intro::before{content:"";position:absolute;inset:-30% auto -30% -40%;width:35%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-16deg);animation:sheen 1.4s ease-out 1 both;animation-delay:var(--sheen-delay,1.2s);pointer-events:none}
+@keyframes sheen{from{left:-40%}to{left:120%}}
+@media (prefers-reduced-motion:reduce){.wf#wf0,.art,.hint::after,.intro::before{animation:none}#hello{display:none}}
 .brand img{border-radius:8px}</style>
 </head><body>
 <div id="prog"></div>
+<div id="hello" hidden aria-hidden="true"><div><div class="chip"><img src="img/logo.png" alt=""></div><div class="hk">A new website for</div><h2 class="hn">BK Builders</h2><div class="hs">S.Kolathur, Kovilambakkam, Chennai</div></div></div>
 <div class="concept">Concept redesign for BK Builders · not the official website</div>
 <nav class="nav"><a class="brand" href="#walk"><img src="img/logo.png" alt=""><span>BK Builders</span></a><a class="btn" href="tel:+919789004404">Call to book</a></nav>
 
@@ -224,7 +244,7 @@ footer{background:var(--tint2);color:var(--muted)}
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (function(){
-const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="919789004404", NAME="BK Builders", WAQ="can I visit the site on {date}?";
+const SLUG="bk-builders", reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, WA="919789004404", NAME="BK Builders", WAQ="can I visit the site on {date}?";
 gsap.registerPlugin(ScrollTrigger);
 
 document.getElementById("dateform").addEventListener("submit",e=>{
@@ -241,6 +261,20 @@ if(sp&&!reduce){const x=sp.getContext("2d");let w,h,pts=[],edge=-1;
 
 const _q=new URLSearchParams(location.search).get("shot"), shotAt=_q===null?undefined:({start:0.0,mid:0.5,end:0.999}[_q]??(isNaN(parseFloat(_q))?undefined:parseFloat(_q)));
 if(shotAt!==undefined) document.querySelector(".concept").style.display="none";
+
+const RV="https://qldlfkqvjjnuthaxnsei.supabase.co/functions/v1/rv", _qs=new URLSearchParams(location.search);
+const SRC=((_qs.get("src")||"direct").toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,20))||"direct";
+let _me=false; try{ if(_qs.has("me")) localStorage.setItem("rv_me","1"); _me=localStorage.getItem("rv_me")==="1"; }catch(e){}
+const _sent={}; const track=(k,once)=>{ if(once&&_sent[k]) return; _sent[k]=1;
+  if(shotAt!==undefined||_me||/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+  try{ fetch(RV+"?s="+SLUG+"&k="+k+"&src="+SRC,{mode:"no-cors",keepalive:true}); }catch(e){} };
+track("view",1);
+addEventListener("scroll",()=>{const h=document.documentElement, p=(scrollY+innerHeight)/h.scrollHeight; if(p>0.5) track("scroll50",1); if(p>0.97) track("scrollend",1);},{passive:true});
+document.addEventListener("click",e=>{const a=e.target.closest("a,button"); if(!a) return; const h=a.getAttribute("href")||"";
+  if(h.startsWith("tel:")) track("call"); else if(h.includes("wa.me")) track("whatsapp"); else if(a.classList.contains("btn")) track("cta");},true);
+const _df=document.getElementById("dateform"); if(_df) _df.addEventListener("submit",()=>track("whatsapp"));
+document.querySelectorAll(".faq details").forEach(d=>d.addEventListener("toggle",()=>{ if(d.open) track("faq",1); }));
+
 
 const tl=gsap.timeline({defaults:{ease:"none"},paused:reduce||shotAt!==undefined,scrollTrigger:(reduce||shotAt!==undefined)?undefined:{trigger:"#walk",start:"top top",end:"+=405%",scrub:0.8,pin:true,anticipatePin:1}});
 tl.to("#intro",{opacity:0,y:-30,duration:.5},0.2);
@@ -269,14 +303,31 @@ window.__hz=gsap.to(track,{x:()=>-(track.scrollWidth-innerWidth),ease:"none",scr
 gsap.utils.toArray(".card img").forEach(img=>gsap.to(img,{scale:1,ease:"none",scrollTrigger:{trigger:"#tour",start:"top top",end:"+=150%",scrub:true}}));
 gsap.fromTo(".book .bg",{scale:1.15},{scale:1,ease:"none",scrollTrigger:{trigger:".book",start:"top bottom",end:"bottom bottom",scrub:true}});
 
+
+const hello=document.getElementById("hello"); let helloOn=false;
+if(hello && shotAt===undefined){ let seen=false; try{ seen=sessionStorage.getItem("rv_hello_"+SLUG)==="1"; sessionStorage.setItem("rv_hello_"+SLUG,"1"); }catch(e){}
+  if(!seen){ helloOn=true; hello.hidden=false; document.documentElement.style.overflow="hidden";
+    const nm=hello.querySelector(".hn"); const letters=[...nm.textContent].map(ch=>{const s=document.createElement("span"); s.textContent=ch===" "?" ":ch; return s;}); nm.textContent=""; letters.forEach(s=>nm.appendChild(s));
+    const ht=gsap.timeline({onComplete(){hello.hidden=true; document.documentElement.style.overflow=""; ScrollTrigger.refresh();}});
+    ht.from(hello.querySelector(".chip"),{scale:.4,opacity:0,rotate:-8,duration:.7,ease:"back.out(1.8)"})
+      .from(hello.querySelector(".hk"),{y:14,opacity:0,duration:.45},"-=.25")
+      .from(letters,{yPercent:120,opacity:0,duration:.6,ease:"power4.out",stagger:.035},"-=.15")
+      .from(hello.querySelector(".hs"),{opacity:0,duration:.4},"-=.2")
+      .to({}, {duration:.55})
+      .to(hello,{clipPath:"inset(0% 0% 100% 0%)",duration:.9,ease:"power3.inOut"});
+    const skip=()=>{ if(ht.progress()<.82) ht.progress(.82); };
+    ["wheel","touchstart","keydown","click"].forEach(ev=>addEventListener(ev,skip,{once:true,passive:true}));
+  } else hello.hidden=true;
+} else if(hello) hello.hidden=true;
+document.documentElement.style.setProperty("--sheen-delay", helloOn?"3.4s":"1.1s");
 const prog=document.getElementById("prog");
 if(prog) gsap.to(prog,{scaleX:1,ease:"none",scrollTrigger:{start:0,end:"max",scrub:0.3}});
 const split=el=>{if(!el||el.dataset.split)return[];el.dataset.split=1;const words=el.textContent.trim().split(/\s+/);el.textContent="";
   return words.map((w,k)=>{const o=document.createElement("span");o.className="sw";const i=document.createElement("i");i.textContent=w;o.appendChild(i);el.appendChild(o);if(k<words.length-1)el.appendChild(document.createTextNode(" "));return i;});};
 if(shotAt===undefined){
   const h1=split(document.querySelector("#intro h1"));
-  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:.25});
-  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:.55});
+  gsap.from(h1,{yPercent:115,duration:1,ease:"power4.out",stagger:.07,delay:helloOn?2.9:.25});
+  gsap.from("#intro .eyebrow, #intro p, #intro .row",{y:22,opacity:0,duration:.8,ease:"power2.out",stagger:.1,delay:helloOn?3.2:.55});
   document.querySelectorAll(".band h2, .tour .head h2, .bk h2").forEach(h=>{const ws=split(h);
     gsap.from(ws,{yPercent:115,duration:.9,ease:"power4.out",stagger:.05,scrollTrigger:{trigger:h,start:"top 88%"}});});
   document.querySelectorAll(".band .lead, .band .kicker, .bk .lead, .faq details").forEach(el=>
